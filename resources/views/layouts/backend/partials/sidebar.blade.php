@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="/" class="brand-link">
         <div class="text-center">
-            <span class="brand-text font-weight-bold">LaraDev</span>
+            <span class="brand-text font-weight-bold">Culticademy</span>
         </div>
     </a>
 
@@ -44,8 +44,8 @@
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
+                    <li class="nav-item {{ Route::is('admin.course*') ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ active('admin.course*') }}">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-device-laptop nav-icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -62,7 +62,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href=""
+                                <a href="{{ route('admin.course.index') }}"
                                     class="nav-link {{ active('admin.course.index') }}">
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         class="icon icon-tabler icon-tabler-corner-down-right-double nav-icon"
@@ -77,8 +77,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href=""
-                                    class="nav-link">
+                                <a href="{{ route('admin.course.create') }}"
+                                    class="nav-link {{ active('admin.course.create') }}">
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         class="icon icon-tabler icon-tabler-corner-down-right-double nav-icon"
                                         width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
@@ -94,7 +94,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route('admin.showcase.index') }}" class="nav-link {{ active('admin.showcase*') }} ">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-source-code nav-icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -110,7 +110,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route('admin.review.index') }}" class="nav-link {{ active('admin.review.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-message-2 nav-icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -128,26 +128,26 @@
                         </a>
                     </li>
                     <li class="nav-header">LEARN</li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <li class="nav-item">
+                        <a href="{{ route('admin.mycourse') }}" class="nav-link {{ active('admin.mycourse*') }} ">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-devices nav-icon"
-                                width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <rect x="13" y="8" width="8" height="12" rx="1">
-                                </rect>
-                                <path d="M18 8v-3a1 1 0 0 0 -1 -1h-13a1 1 0 0 0 -1 1v12a1 1 0 0 0 1 1h9"></path>
-                                <line x1="16" y1="9" x2="18" y2="9"></line>
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
+                            stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <rect x="13" y="8" width="8" height="12" rx="1">
+                            </rect>
+                            <path d="M18 8v-3a1 1 0 0 0 -1 -1h-13a1 1 0 0 0 -1 1v12a1 1 0 0 0 1 1h9"></path>
+                            <line x1="16" y1="9" x2="18" y2="9"></line>
                             </svg>
                             <p>
                                 My Course
                             </p>
                         </a>
-                    </li>
+                        </li>
                     <li class="nav-header">Transaction</li>
                     <li class="nav-item">
-                        <a href=""
-                            class="nav-link">
+                        <a href="{{ route('admin.transaction.index') }}"
+                            class="nav-link {{ active('admin.transaction*') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-receipt nav-icon"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -163,7 +163,7 @@
                     </li>
                     <li class="nav-header">User Management</li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route('admin.user.index') }}" class="nav-link {{ active('admin.user.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users nav-icon"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -179,7 +179,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route('admin.user.profile') }}" class="nav-link {{ active('admin.user.profile') }}">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-user-circle nav-icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -198,7 +198,7 @@
                 @role('member|author')
                     <li class="nav-header">DASHBOARD</li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route('member.dashboard') }}" class="nav-link {{ active('member.dashboard') }} ">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-brand-tabler nav-icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -216,8 +216,8 @@
                     </li>
                     @role('author')
                         <li class="nav-header">MASTER DATA</li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item {{ Route::is('member.course*') ? 'menu-open' : '' }}">
+                            <a href="#" class="nav-link {{ active('member.course*') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-device-laptop nav-icon" width="24" height="24"
                                     viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -234,8 +234,8 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href=""
-                                        class="nav-link">
+                                    <a href="{{ route('member.course.index') }}"
+                                        class="nav-link {{ active('member.course.index') }}">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-corner-down-right-double nav-icon"
                                             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
@@ -249,8 +249,8 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href=""
-                                        class="nav-link">
+                                    <a href="{{ route('member.course.create') }}"
+                                        class="nav-link {{ active('member.course.create') }}">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-corner-down-right-double nav-icon"
                                             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
@@ -268,7 +268,7 @@
                     @endcan
                     <li class="nav-header">LEARN</li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route('admin.mycourse') }}" class="nav-link {{ active('admin.mycourse*') }} ">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-devices nav-icon"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -284,8 +284,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href=""
-                            class="nav-link">
+                        <a href="{{ route('member.showcase.index') }}"
+                            class="nav-link {{ active('member.showcase*') }}">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-source-code nav-icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -302,8 +302,8 @@
                     </li>
                     <li class="nav-header">TRANSACTION</li>
                     <li class="nav-item">
-                        <a href=""
-                            class="nav-link">
+                        <a href="{{ route('member.transaction.index') }}"
+                            class="nav-link {{ active('member.transaction*') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-receipt nav-icon"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -319,8 +319,8 @@
                     </li>
                     <li class="nav-header">CONFIGURATION</li>
                     <li class="nav-item">
-                        <a href=""
-                            class="nav-link">
+                        <a href="{{ route('member.profile.index') }}"
+                            class="nav-link {{ active('member.profile.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-user-circle nav-icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"

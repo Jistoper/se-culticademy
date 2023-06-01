@@ -31,3 +31,4 @@ if (! function_exists('videoActive')) {
         return request()->segment(3) == $params ? 'border rounded-lg bg-slate-800' : '' ;
     }
 }
+

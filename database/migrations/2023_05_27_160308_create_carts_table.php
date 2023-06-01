@@ -8,28 +8,23 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
-        Schema::create('reviews', function (Blueprint $table) {
+        Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('course_id')->constrained();
             $table->foreignId('user_id')->constrained();
-            $table->integer('rating');
-            $table->text('review');
+            $table->foreignId('course_id')->constrained();
+            $table->double('price');
             $table->timestamps();
         });
-    }
+}
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('carts');
     }
 };
