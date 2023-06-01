@@ -268,7 +268,7 @@
                     @endcan
                     <li class="nav-header">LEARN</li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.mycourse') }}" class="nav-link {{ active('admin.mycourse*') }} ">
+                        <a href="{{ route('member.mycourse') }}" class="nav-link {{ active('member.mycourse*') }} ">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-devices nav-icon"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -284,21 +284,20 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('member.showcase.index') }}"
-                            class="nav-link {{ active('member.showcase*') }}">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="icon icon-tabler icon-tabler-source-code nav-icon" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M14.5 4h2.5a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-10a3 3 0 0 1 -3 -3v-5"></path>
-                                <path d="M6 5l-2 2l2 2"></path>
-                                <path d="M10 9l2 -2l-2 -2"></path>
-                            </svg>
-                            <p>
-                                Showcase
-                            </p>
-                        </a>
+                      <a href="{{ route('member.showcase.index') }}" class="nav-link {{ active('member.showcase*') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                          class="icon icon-tabler icon-tabler-source-code nav-icon" width="24" height="24"
+                          viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
+                          stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M14.5 4h2.5a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-10a3 3 0 0 1 -3 -3v-5"></path>
+                        <path d="M6 5l-2 2l2 2"></path>
+                        <path d="M10 9l2 -2l-2 -2"></path>
+                        </svg>
+                        <p>
+                            Showcase
+                        </p>
+                    </a>
                     </li>
                     <li class="nav-header">TRANSACTION</li>
                     <li class="nav-item">
