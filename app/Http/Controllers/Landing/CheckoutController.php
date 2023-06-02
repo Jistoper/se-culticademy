@@ -93,9 +93,9 @@ class CheckoutController extends Controller
 
             $admin = User::role('admin')->get();
 
-            Notification::send($admin, new NewTransaction($invoice));
+            // Notification::send($admin, new NewTransaction($invoice));
 
-            return $this->response['snapToken'] = $snapToken;
+           // return $this->response['snapToken'] = $snapToken;
         });
 
         return view('landing.cart.checkout', compact('snapToken'));
