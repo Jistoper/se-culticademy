@@ -18,9 +18,33 @@ use App\Http\Controllers\Member\ReviewController as MemberReviewController;
 use App\Http\Controllers\Member\VideoController as MemberVideoController;
 use App\Http\Controllers\Member\ShowcaseController as MemberShowcaseController;
 use App\Http\Controllers\Member\TransactionController as MemberTransactionController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Landing\CartController;
+use App\Http\Controllers\Landing\CategoryController as LandingCategoryController;
+use App\Http\Controllers\Landing\CourseController as LandingCourseController;
 
 Route::get('/', function(){
     return view('auth.login');
+});
+
+// home route
+Route::get('/home', HomeController::class)->name('home');
+
+// course route
+Route::controller(LandingCourseController::class)->as('course.')->group(function(){
+    Route::get('/course', 'index')->name('index');
+    Route::get('/course/{course:slug}', 'show')->name('show');
+    Route::get('/course/{course:slug}/{video:episode}', 'video')->name('video');
+});
+
+// category route
+Route::get('/category/{category:slug}', LandingCategoryController::class)->name('category');
+
+// cart route
+Route::controller(CartController::class)->middleware('auth')->as('cart.')->group(function(){
+    Route::get('/cart', 'index')->name('index');
+    Route::post('/cart/{course}', 'store')->name('store');
+    Route::delete('/cart/{cart}', 'delete')->name('destroy');
 });
 
 // admin route
