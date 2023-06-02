@@ -168,8 +168,8 @@
                     @empty
                         <div class="row">
                             <div class="col-12 d-flex justify-content-center">
-                                <img src="{{ asset('course.svg') }}" class="img-fluid" width="60%">
-                            </div>
+                                <img src="https://hilearn.himatikauty.com/build/assets/Banner2.ad272e5a.svg" class="img-fluid" width="60%">
+                            </div>                            
                         </div>
                     @endforelse
                     <div class="d-flex justify-content-end">{{ $courses->links() }}</div>
