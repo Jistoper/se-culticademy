@@ -36,7 +36,7 @@
                         </svg>
                         Lihat Course
                     </a>
-                    {{-- <a href="{{ route('showcase') }}"
+                    <a href="{{ route('showcase') }}"
                         class="px-4 py-2 rounded-lg bg-red-800 text-white hover:scale-110 hover:duration-200 flex items-center gap-2 text-sm border border-red-600">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-source-code w-5 h-5"
                             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
@@ -47,7 +47,7 @@
                             <path d="M10 9l2 -2l-2 -2"></path>
                         </svg>
                         Lihat Showcase
-                    </a> --}}
+                    </a>
                 </div>
             </div>
             <div class="hidden md:flex md:col-span-5">

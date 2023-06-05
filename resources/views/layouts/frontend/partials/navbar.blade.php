@@ -83,7 +83,7 @@
                     </div>
                 </li>
                 <li class="hidden lg:flex">
-                    {{-- <a href="{{ route('review') }}"
+                    <a href="{{ route('review') }}"
                         class="text-sm font-semibold text-white flex items-center gap-2 {{ activeNav('review') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-2 w-5 h-5"
                             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
@@ -96,10 +96,10 @@
                             <line x1="8" y1="13" x2="14" y2="13"></line>
                         </svg>
                         Review
-                    </a> --}}
+                    </a>
                 </li>
                 <li class="hidden lg:flex">
-                    {{-- <a href="{{ route('showcase') }}"
+                    <a href="{{ route('showcase') }}"
                         class="text-sm font-semibold text-white flex items-center gap-2 {{ activeNav('showcase') }}">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="icon icon-tabler icon-tabler-source-code w-5 h-5" width="24" height="24"
@@ -111,7 +111,7 @@
                             <path d="M10 9l2 -2l-2 -2"></path>
                         </svg>
                         Showcase
-                    </a> --}}
+                    </a>
                 </li>
             </ul>
             <!-- NavProfile -->
@@ -278,7 +278,7 @@
                         <a href="{{ route('logout') }}" class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500 Btn">
                             <div class="sign">
                                 <svg viewBox="0 0 512 512" class="icon icon-tabler icon-tabler-logout w-20 h-20">
-                                    <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>  
+                                    <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
                                 </svg>
                             </div>
                             <div class="text absolute right-0 w-0 opacity-0 text-white text-lg font-semibold transition duration-300">
@@ -427,7 +427,7 @@
                             </div>
                         </li>
                         <li>
-                            {{-- <a href="{{ route('review') }}"
+                            <a href="{{ route('review') }}"
                                 class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500 {{ activeNav('review') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-message-2 w-5 h-5" width="24"
@@ -441,10 +441,10 @@
                                     <line x1="8" y1="13" x2="14" y2="13"></line>
                                 </svg>
                                 Review
-                            </a> --}}
+                            </a>
                         </li>
                         <li>
-                            {{-- <a href="{{ route('showcase') }}"
+                            <a href="{{ route('showcase') }}"
                                 class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500 {{ activeNav('showcase') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-source-code w-5 h-5" width="24"
@@ -457,7 +457,7 @@
                                     <path d="M10 9l2 -2l-2 -2"></path>
                                 </svg>
                                 Showcase
-                            </a> --}}
+                            </a>
                         </li>
                         @guest
                             <li class="border-t border-dashed border-gray-700">
