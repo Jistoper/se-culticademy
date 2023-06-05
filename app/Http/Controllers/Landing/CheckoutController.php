@@ -32,72 +32,72 @@ class CheckoutController extends Controller
 
     public function store(Request $request)
     {
-        $snapToken = DB::transaction(function () use($request){
+        // $snapToken = DB::transaction(function () use($request){
 
-            $length = 6;
+        //     $length = 6;
 
-            $random = '';
+        //     $random = '';
 
-            for ($i = 0; $i < $length; $i++) {
+        //     for ($i = 0; $i < $length; $i++) {
 
-                $random .= rand(0, 1) ? rand(0, 9) : chr(rand(ord('a'), ord('z')));
-            }
-
-
-            $no_invoice = 'LD-'.Str::upper($random);
+        //         $random .= rand(0, 1) ? rand(0, 9) : chr(rand(ord('a'), ord('z')));
+        //     }
 
 
-            $invoice = Transaction::create([
-                'invoice'           => $no_invoice,
-                'user_id'           => $request->user()->id,
-                'name'              => $request->name,
-                'grand_total'       => $request->grand_total,
-                'status'            => 'pending',
-            ]);
+        //     $no_invoice = 'LD-'.Str::upper($random);
 
 
-            $carts = Cart::where('user_id', $request->user()->id);
+        //     $invoice = Transaction::create([
+        //         'invoice'           => $no_invoice,
+        //         'user_id'           => $request->user()->id,
+        //         'name'              => $request->name,
+        //         'grand_total'       => $request->grand_total,
+        //         'status'            => 'pending',
+        //     ]);
 
 
-            foreach($carts->get() as $cart){
-                $invoice->details()->create([
-                    'course_id' => $cart->course_id,
-                    'price' => $cart->price
-                ]);
-            }
+        //     $carts = Cart::where('user_id', $request->user()->id);
 
-            $payload = [
-                'transaction_details' => [
-                    'order_id' => $invoice->invoice,
-                    'gross_amount' => $invoice->grand_total
-                ],
-                'customer_details' => [
-                    'first_name' => $invoice->name,
-                    'email' => $request->user()->email,
-                ],
-                'item_details' => $carts->get()->map(fn($cart) => [
-                    'id' => $cart->id,
-                    'price' => $cart->price,
-                    'quantity' => 1,
-                    'name' => Str::limit($cart->course->name, 40)
-                ])
-            ];
 
-            $snapToken = Snap::getSnapToken($payload);
+        //     foreach($carts->get() as $cart){
+        //         $invoice->details()->create([
+        //             'course_id' => $cart->course_id,
+        //             'price' => $cart->price
+        //         ]);
+        //     }
 
-            $invoice->snap_token = $snapToken;
+        //     $payload = [
+        //         'transaction_details' => [
+        //             'order_id' => $invoice->invoice,
+        //             'gross_amount' => $invoice->grand_total
+        //         ],
+        //         'customer_details' => [
+        //             'first_name' => $invoice->name,
+        //             'email' => $request->user()->email,
+        //         ],
+        //         'item_details' => $carts->get()->map(fn($cart) => [
+        //             'id' => $cart->id,
+        //             'price' => $cart->price,
+        //             'quantity' => 1,
+        //             'name' => Str::limit($cart->course->name, 40)
+        //         ])
+        //     ];
 
-            $invoice->save();
+        //     $snapToken = Snap::getSnapToken($payload);
 
-            $carts->delete();
+        //     $invoice->snap_token = $snapToken;
 
-            $admin = User::role('admin')->get();
+        //     $invoice->save();
 
-            // Notification::send($admin, new NewTransaction($invoice));
+        //     $carts->delete();
 
-           // return $this->response['snapToken'] = $snapToken;
-        });
+        //     $admin = User::role('admin')->get();
 
-        return view('landing.cart.checkout', compact('snapToken'));
+        //     // Notification::send($admin, new NewTransaction($invoice));
+
+        //    // return $this->response['snapToken'] = $snapToken;
+        // });
+
+        return view('landing.cart.checkout');
     }
 }

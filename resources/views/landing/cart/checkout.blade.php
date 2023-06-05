@@ -31,7 +31,7 @@
 @push('js')
     <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
         data-client-key="{{ config('services.midtrans.serverKey') }}"></script>
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         var payButton = document.getElementById('pay-button');
         payButton.addEventListener('click', function() {
             window.snap.pay('{{ $snapToken }}', {
@@ -49,5 +49,5 @@
                 }
             });
         });
-    </script>
+    </script> --}}
 @endpush

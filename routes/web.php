@@ -11,7 +11,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MyCourseController;
 use App\Http\Controllers\Admin\ShowcaseController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Landing\CheckoutContoller;
+use App\Http\Controllers\Landing\CheckoutController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\NotificationDatabaseController;
 use App\Http\Controllers\Member\VideoController as MemberVideoController;
@@ -59,7 +59,7 @@ Route::controller(CartController::class)->middleware('auth')->as('cart.')->group
     Route::delete('/cart/{cart}', 'delete')->name('destroy');
 });
 // checkout route
-Route::get('/checkout', [CheckoutContoller::class, 'store'])->name('checkout.store');
+Route::get('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 
 // admin route
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function(){
