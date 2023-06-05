@@ -1,4 +1,5 @@
-<p align="center"><a href="https://culticademy.com" target="_blank"><img src="https://drive.google.com/file/d/1cBW9IPXkCbSgYF32CKJMoMtaYWC0jRRY/view?usp=drive_link" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://culticademy.com" target="_blank"><img src="public/dist/img/logo.png" width="400" alt="Culticademy Logo"></a></p>
+
 
 ## About Culticademy
 
