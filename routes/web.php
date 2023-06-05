@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\UserController;
@@ -13,7 +14,6 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Landing\CheckoutContoller;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\NotificationDatabaseController;
-use app\Http\Controllers\Admin\NotificationHandler;
 use App\Http\Controllers\Member\VideoController as MemberVideoController;
 use App\Http\Controllers\Member\CourseController as MemberCourseController;
 use App\Http\Controllers\Member\ReviewController as MemberReviewController;
@@ -26,6 +26,7 @@ use App\Http\Controllers\Landing\CategoryController as LandingCategoryController
 use App\Http\Controllers\Landing\ShowcaseController as LandingShowcaseController;
 use App\Http\Controllers\Member\DashboardController as MemberDashboardController;
 use App\Http\Controllers\Member\TransactionController as MemberTransactionController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +37,7 @@ use App\Http\Controllers\Member\TransactionController as MemberTransactionContro
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 // home route
 Route::get('/', HomeController::class)->name('home');
 // course route
@@ -58,6 +60,7 @@ Route::controller(CartController::class)->middleware('auth')->as('cart.')->group
 });
 // checkout route
 Route::get('/checkout', [CheckoutContoller::class, 'store'])->name('checkout.store');
+
 // admin route
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function(){
     // admin dashboard route
@@ -98,6 +101,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'r
     // admin transaction route
     Route::resource('/transaction', TransactionController::class)->only('index', 'show');
 });
+
 // member route
 Route::group(['as' => 'member.', 'prefix' => 'account', 'middleware' => ['auth', 'role:member|author']], function(){
     // member dashboard route
