@@ -5,15 +5,9 @@
             <ul class="flex items-center justify-center gap-5">
                 <li>
                     <a href="/" class="flex items-center text-lg text-white font-semibold">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-tabler"
-                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M8 9l3 3l-3 3"></path>
-                            <line x1="13" y1="15" x2="16" y2="15"></line>
-                            <rect x="4" y="4" width="16" height="16" rx="4"></rect>
-                        </svg>
-                        LaraDev
+                        <img src="dist\img\logo.png" alt="Culticademy Logo" class="icon icon-tabler icon-tabler-brand-tabler"
+                        width="40" height="40">
+                        Culticademy
                     </a>
                 </li>
                 <li class="hidden lg:flex">
@@ -258,7 +252,7 @@
                                 @endrole
                             </li>
                             <li>
-                                <a href="{{ route('logout') }}"
+                                {{-- <a href="{{ route('logout') }}"
                                     class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -276,9 +270,24 @@
                                         class="d-none">
                                         @csrf
                                     </form>
-                                </a>
+                                </a> --}}
                             </li>
                         </ul>
+                    </div>
+                    <div>
+                        <a href="{{ route('logout') }}" class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500 Btn">
+                            <div class="sign">
+                                <svg viewBox="0 0 512 512" class="icon icon-tabler icon-tabler-logout w-20 h-20">
+                                    <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>  
+                                </svg>
+                            </div>
+                            <div class="text absolute right-0 w-0 opacity-0 text-white text-lg font-semibold transition duration-300">
+                              Logout
+                            </div>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </a>
                     </div>
                 @endauth
             </div>
@@ -558,7 +567,7 @@
                                 </li>
                             @endrole
                             <li>
-                                <a href="{{ route('logout') }}"
+                                {{-- <a href="{{ route('logout') }}"
                                     class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -576,7 +585,7 @@
                                         class="d-none">
                                         @csrf
                                     </form>
-                                </a>
+                                </a> --}}
                             </li>
                         @endauth
                     </ul>
