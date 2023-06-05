@@ -24,6 +24,7 @@
                         width="48" height="48">
                     Culticademy
                 </a>
+                
             </div>
             @yield('content')
         </div>
