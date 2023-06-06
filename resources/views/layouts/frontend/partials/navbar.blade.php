@@ -12,7 +12,7 @@
                 </li>
                 <li class="hidden lg:flex">
                     <a href="{{ route('home') }}"
-                        class="text-sm font-semibold text-white flex items-center gap-2 {{ activeNav('home') }}">
+                        class="text-sm font-semibold text-white flex items-center gap-2 hover:underline {{ activeNav('home') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home w-5 h-5"
                             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
                             fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -26,7 +26,7 @@
                 </li>
                 <li class="hidden lg:flex">
                     <a href="{{ route('course.index') }}"
-                        class="text-sm font-semibold text-white flex items-center gap-2 {{ activeNav('course.index') }}">
+                        class="text-sm font-semibold text-white flex items-center gap-2 hover:underline {{ activeNav('course.index') }}">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="icon icon-tabler icon-tabler-device-laptop w-5 h-5" width="24" height="24"
                             viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -41,7 +41,7 @@
                 <li class="hidden lg:flex">
                     <div class="relative" x-data="{ isOpen: false }">
                         <button @click="isOpen = !isOpen" @keydown.escape="isOpen = false"
-                            class="flex items-center gap-2 text-sm text-white {{ activeNav('category*') }}">
+                            class="flex items-center font-semibold gap-2 text-sm text-white hover:underline {{ activeNav('category*') }}">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-category-2 w-5 h-5" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -84,7 +84,7 @@
                 </li>
                 <li class="hidden lg:flex">
                     <a href="{{ route('review') }}"
-                        class="text-sm font-semibold text-white flex items-center gap-2 {{ activeNav('review') }}">
+                        class="text-sm font-semibold text-white flex items-center gap-2 hover:underline {{ activeNav('review') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-2 w-5 h-5"
                             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
                             stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -100,7 +100,7 @@
                 </li>
                 <li class="hidden lg:flex">
                     <a href="{{ route('showcase') }}"
-                        class="text-sm font-semibold text-white flex items-center gap-2 {{ activeNav('showcase') }}">
+                        class="text-sm font-semibold text-white flex items-center gap-2 hover:underline {{ activeNav('showcase') }}">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="icon icon-tabler icon-tabler-source-code w-5 h-5" width="24" height="24"
                             viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"

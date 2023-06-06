@@ -25,7 +25,7 @@
                             <line x1="3" y1="19" x2="21" y2="19"></line>
                             <rect x="5" y="6" width="14" height="10" rx="1"></rect>
                         </svg>
-                        <span class="text-culti-green-4 font-bold">Lihat Course</span>
+                        <span class="text-culti-green-3 font-bold">Lihat Course</span>
                     </a>
                     <a href="{{ route('showcase') }}"
                         class="px-4 py-2 rounded-lg bg-culti-green-3 text-white hover:scale-105 hover:duration-200 flex items-center gap-2 text-sm border border-culti-green-3">
