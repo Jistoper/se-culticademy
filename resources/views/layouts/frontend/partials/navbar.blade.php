@@ -118,7 +118,7 @@
             <div class="hidden md:flex items-center gap-2 text-white">
                 @guest
                     <a href="{{ route('login') }}"
-                        class="text-gray-200 font-semibold flex items-center border px-4 py-2 gap-2 rounded-lg text-xs bg-slate-900 border-slate-700">
+                        class="text-white font-semibold flex items-center border px-4 py-2 gap-2 rounded-lg text-xs bg-slate-900 border-slate-900 hover:bg-white hover:text-slate-900">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-check w-5 h-5"
                             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
                             fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -130,7 +130,7 @@
                         Sign In
                     </a>
                     <a href="{{ route('register') }}"
-                        class="font-semibold text-white flex items-center border px-4 py-2 gap-2 rounded-lg text-xs bg-slate-100 border-slate-900">
+                        class="font-semibold text-slate-900 flex items-center border px-4 py-2 gap-2 rounded-lg text-xs bg-slate-100 border-slate-900 hover:bg-slate-900 hover:text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus w-5 h-5"
                             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
                             fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -143,35 +143,33 @@
                     </a>
                 @endguest
                 @auth
-                    <div class="rounded-lg border px-4 py-2 bg-slate-100 border-gray-500">
-                        <a href="{{ route('cart.index') }}">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="icon icon-tabler icon-tabler-basket w-5 h-5 {{ Route::is('cart.index') ? 'text-slate-500' : '' }}"
-                                width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
-                                stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <polyline points="7 10 12 4 17 10"></polyline>
-                                <path d="M21 10l-2 8a2 2.5 0 0 1 -2 2h-10a2 2.5 0 0 1 -2 -2l-2 -8z"></path>
-                                <circle cx="12" cy="15" r="2"></circle>
-                            </svg>
-                        </a>
-                    </div>
+                    <a href="{{ route('cart.index') }}" class="rounded-lg border px-4 py-2 bg-white border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white">
+                          <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-basket w-5 h-5 {{ Route::is('cart.index') }}"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
+                            stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <polyline points="7 10 12 4 17 10"></polyline>
+                            <path d="M21 10l-2 8a2 2.5 0 0 1 -2 2h-10a2 2.5 0 0 1 -2 -2l-2 -8z"></path>
+                            <circle cx="12" cy="15" r="2"></circle>
+                        </svg>
+                    </a>
                     <div class="relative" x-data="{ isOpen: false }">
                         <button @click="isOpen = !isOpen" @keydown.escape="isOpen = false"
-                            class="flex items-center gap-2 border px-4 py-2 rounded-lg text-sm bg-slate-100 border-gray-500">
+                            class="flex items-center gap-2 border px-4 py-2 rounded-lg text-sm bg-white border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white">
                             <img src="{{ Auth::user()->avatar }}" alt="avatar"
                                 class="w-5 h-5 rounded-full border border-gray-500">
-                            <text class="text-slate-900">{{ Auth::user()->name }}</text>
+                            {{ Auth::user()->name }}
                             <svg xmlns="http://www.w3.org/2000/svg" x-show="!isOpen"
                                 class="icon icon-tabler icon-tabler-chevron-down w-4 h-4" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="1.25" stroke="#889E81" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                             <svg xmlns="http://www.w3.org/2000/svg" x-cloak x-show="isOpen"
                                 class="icon icon-tabler icon-tabler-chevron-up w-4 h-4" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="1.25" stroke="#889E81" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="6 15 12 9 18 15"></polyline>
