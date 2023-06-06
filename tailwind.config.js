@@ -6,7 +6,21 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'culti-green': '#889E81',
+        'culti-green-2': '#b0c6a9',
+        'culti-green-3': '#054141',
+        'culti-green-4': '#235f5f',
+        'culti-green-5': '#5f9b9b',
+      },
+    },
+  },
+  variants: {
+    extend: {
+      textColor: ['hover'],
+    },
   },
   plugins: [],
 }
+

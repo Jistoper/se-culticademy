@@ -1,12 +1,12 @@
-<div class="w-full bg-slate-800 p-3 border-b border-slate-700 border-dashed">
+<div class="w-full bg-culti-green-3 p-3 border-b border-culti-green border-line">
     <div class="container mx-auto">
         <div class="flex items-center justify-between">
             <!-- NavMenu -->
             <ul class="flex items-center justify-center gap-5">
                 <li>
                     <a href="/" class="flex items-center text-lg text-white font-semibold">
-                        <img src="dist\img\logo.png" alt="Culticademy Logo" class="icon icon-tabler icon-tabler-brand-tabler"
-                        width="40" height="40">
+                        {{-- <img src="dist\img\logo.png" alt="Culticademy Logo" class="icon icon-tabler icon-tabler-brand-tabler"
+                        width="40" height="40"> --}}
                         Culticademy
                     </a>
                 </li>
@@ -69,13 +69,13 @@
                             </svg>
                         </button>
                         <ul x-cloak x-show="isOpen" @click.away="isOpen = false"
-                            class="absolute font-normal bg-slate-800 shadow overflow-hidden rounded-lg w-48 border border-slate-700 mt-2 py-1 left-0 z-20">
+                            class="absolute font-normal bg-slate-100 shadow overflow-hidden rounded-lg w-48 border border-culti-green mt-2 py-1 left-0 z-20">
                             @foreach ($categories as $category)
                                 <li>
                                     <a href="{{ route('category', $category->slug) }}"
                                         class="flex items-center p-3 hover:text-blue-500 rounded-lg text-sm text-white">
                                         <img src="{{ $category->image }}" class="w-5 h-5 object-cover" />
-                                        <span class="ml-2">{{ $category->name }}</span>
+                                        <span class="ml-2 text-gray-500 hover:text-blue-400 transition-colors">{{ $category->name }}</span>
                                     </a>
                                 </li>
                             @endforeach
@@ -130,7 +130,7 @@
                         Sign In
                     </a>
                     <a href="{{ route('register') }}"
-                        class="font-semibold text-white flex items-center border px-4 py-2 gap-2 rounded-lg text-xs bg-slate-700 border-slate-900">
+                        class="font-semibold text-white flex items-center border px-4 py-2 gap-2 rounded-lg text-xs bg-slate-100 border-slate-900">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus w-5 h-5"
                             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
                             fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -143,12 +143,12 @@
                     </a>
                 @endguest
                 @auth
-                    <div class="rounded-lg border px-4 py-2 bg-slate-900 border-slate-700">
+                    <div class="rounded-lg border px-4 py-2 bg-slate-100 border-gray-500">
                         <a href="{{ route('cart.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg"
-                                class="icon icon-tabler icon-tabler-basket w-5 h-5 {{ Route::is('cart.index') ? 'text-blue-500' : '' }}"
+                                class="icon icon-tabler icon-tabler-basket w-5 h-5 {{ Route::is('cart.index') ? 'text-slate-500' : '' }}"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="7 10 12 4 17 10"></polyline>
                                 <path d="M21 10l-2 8a2 2.5 0 0 1 -2 2h-10a2 2.5 0 0 1 -2 -2l-2 -8z"></path>
@@ -158,34 +158,34 @@
                     </div>
                     <div class="relative" x-data="{ isOpen: false }">
                         <button @click="isOpen = !isOpen" @keydown.escape="isOpen = false"
-                            class="flex items-center gap-2 border px-4 py-2 rounded-lg text-sm bg-slate-900 border-slate-700">
+                            class="flex items-center gap-2 border px-4 py-2 rounded-lg text-sm bg-slate-100 border-gray-500">
                             <img src="{{ Auth::user()->avatar }}" alt="avatar"
-                                class="w-5 h-5 rounded-full border border-slate-700">
-                            {{ Auth::user()->name }}
+                                class="w-5 h-5 rounded-full border border-gray-500">
+                            <text class="text-slate-900">{{ Auth::user()->name }}</text>
                             <svg xmlns="http://www.w3.org/2000/svg" x-show="!isOpen"
                                 class="icon icon-tabler icon-tabler-chevron-down w-4 h-4" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.25" stroke="#889E81" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                             <svg xmlns="http://www.w3.org/2000/svg" x-cloak x-show="isOpen"
                                 class="icon icon-tabler icon-tabler-chevron-up w-4 h-4" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.25" stroke="#889E81" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="6 15 12 9 18 15"></polyline>
                             </svg>
                         </button>
                         <ul x-cloak x-show="isOpen" @click.away="isOpen = false"
-                            class="absolute font-normal bg-slate-800 shadow overflow-hidden rounded-lg w-48 border border-slate-700 mt-2 py-1 right-0 z-20">
+                            class="absolute font-normal bg-slate-100 shadow overflow-hidden rounded-lg w-48 border border-culti-green mt-2 py-1 right-0 z-20">
                             <li>
                                 @role('admin')
                                     <a href="{{ route('admin.dashboard') }}"
                                         class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-apps w-5 h-5" width="24" height="24"
-                                            viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.25" stroke="#889E81" fill="none"
                                             stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <rect x="4" y="4" width="6" height="6"
@@ -197,14 +197,14 @@
                                             <line x1="14" y1="7" x2="20" y2="7"></line>
                                             <line x1="17" y1="4" x2="17" y2="10"></line>
                                         </svg>
-                                        <span class="ml-2">Dashboard</span>
+                                        <span class="ml-2 text-gray-500 hover:text-blue-400 transition-colors">Dashboard</span>
                                     </a>
                                 @else
                                     <a href="{{ route('member.dashboard') }}"
                                         class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-apps w-5 h-5" width="24" height="24"
-                                            viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.25" stroke="#889E81" fill="none"
                                             stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <rect x="4" y="4" width="6" height="6"
@@ -216,43 +216,43 @@
                                             <line x1="14" y1="7" x2="20" y2="7"></line>
                                             <line x1="17" y1="4" x2="17" y2="10"></line>
                                         </svg>
-                                        <span class="ml-2">Dashboard</span>
+                                        <span class="ml-2 text-gray-500 hover:text-blue-400 transition-colors">Dashboard</span>
                                     </a>
                                 @endrole
                             </li>
-                            <li class="border-b border-dashed border-slate-700">
+                            <li>
                                 @role('admin')
                                     <a href="{{ route('admin.user.profile') }}"
                                         class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-user-circle w-5 h-5" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
+                                            height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#889E81"
                                             fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <circle cx="12" cy="12" r="9"></circle>
                                             <circle cx="12" cy="10" r="3"></circle>
                                             <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
                                         </svg>
-                                        <span class="ml-2">Profile</span>
+                                        <span class="ml-2 text-gray-500 hover:text-blue-400 transition-colors">Profile</span>
                                     </a>
                                 @else
                                     <a href="{{ route('member.profile.index') }}"
-                                        class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500">
+                                        class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-user-circle w-5 h-5" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
+                                            height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#889E81"
                                             fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <circle cx="12" cy="12" r="9"></circle>
                                             <circle cx="12" cy="10" r="3"></circle>
                                             <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
                                         </svg>
-                                        <span class="ml-2">Profile</span>
+                                        <span class="ml-2 text-gray-500 hover:text-blue-400 transition-colors">Profile</span>
                                     </a>
                                 @endrole
                             </li>
-                            <li>
-                                {{-- <a href="{{ route('logout') }}"
+                            {{-- <li>
+                                <a href="{{ route('logout') }}"
                                     class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -270,8 +270,8 @@
                                         class="d-none">
                                         @csrf
                                     </form>
-                                </a> --}}
-                            </li>
+                                </a>
+                            </li> --}}
                         </ul>
                     </div>
                     <div>

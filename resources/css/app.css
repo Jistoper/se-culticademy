@@ -11,6 +11,7 @@
 [x-cloak] {
     @apply hidden
 }
+
 .Btn {
     display: flex;
     align-items: center;
@@ -24,7 +25,7 @@
     overflow: hidden;
     transition-duration: .3s;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-    background-color: rgb(5, 65, 65);
+    background-color: rgb(174, 14, 14);
   }
   
   /* plus sign */
@@ -38,10 +39,10 @@
     padding-right: 2px;
   }
   
-  /* .sign svg {
+  .sign svg {
     width: 17px;
     height: 17px;
-  } */
+  }
   
   .sign svg path {
     fill: white;
@@ -65,10 +66,7 @@
   }
   
   .Btn:hover .sign {
-    /* width: 30%;
-    height: 17px; */
     transition-duration: .3s;
-    /* padding-left: 5px; */
   }
   /* hover effect button's text */
   .Btn:hover .text {
@@ -82,7 +80,7 @@
     transform: translate(2px ,2px);
   }
 
-  button-sign {
+  custom-button {
     --primary-color: #645bff;
     --secondary-color: #fff;
     --hover-color: #111;
@@ -101,13 +99,13 @@
     font-weight: bold;
   }
   
-  button-sign .arrow-wrapper {
+  custom-button .arrow-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
-  button-sign .arrow {
+  custom-button .arrow {
     margin-top: 1px;
     width: var(--arrow-width);
     background: var(--primary-color);
@@ -116,7 +114,7 @@
     transition: 0.2s;
   }
   
-  button-sign .arrow::before {
+  custom-button .arrow::before {
     content: "";
     box-sizing: border-box;
     position: absolute;
@@ -130,14 +128,14 @@
     transform: rotate(-45deg);
   }
   
-  button-sign:hover {
+  custom-button:hover {
     background-color: var(--hover-color);
   }
   
-  button-sign:hover .arrow {
+  custom-button:hover .arrow {
     background: var(--secondary-color);
   }
   
-  button-sign:hover .arrow:before {
+  custom-button:hover .arrow:before {
     right: 0;
   }

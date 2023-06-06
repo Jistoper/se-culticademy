@@ -1,6 +1,6 @@
 @props(['user', 'total'])
 <form action="{{ route('checkout.store') }}" method="get">
-    <div class="border rounded-lg overflow-hidden">
+    <div class="border border-gray-300 rounded-lg overflow-hidden">
         <div class="bg-white border-b px-4 py-3 text-gray-700 font-medium flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-receipt w-5 h-5" width="24"
                 height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -42,7 +42,7 @@
         </div>
     </div>
     <div class="my-3">
-        <button class="text-white bg-slate-800 hover:bg-slate-900 rounded-lg w-full p-2">
+        <button class="text-white bg-culti-green-3 hover:bg-culti-green-4 rounded-lg w-full p-2">
             Lanjutkan Ke Pembayaran
         </button>
     </div>
