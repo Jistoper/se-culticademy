@@ -1,4 +1,4 @@
-<div class="w-full bg-white p-3 border border-culti-green border-line navbar-container">
+<div class="w-full bg-white p-3 border border-culti-green border-line navbar-container z-10">
     <div class="container mx-auto">
         <div class="flex items-center justify-between">
             <!-- NavMenu -->
@@ -180,7 +180,7 @@
                             <li>
                                 @role('admin')
                                     <a href="{{ route('admin.dashboard') }}"
-                                        class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500">
+                                        class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-apps w-5 h-5" width="24" height="24"
                                             viewBox="0 0 24 24" stroke-width="1.25" stroke="#054141" fill="none"
@@ -291,11 +291,11 @@
             </div>
             <!-- Mobile Nav -->
             <div class="flex gap-1 items-center md:hidden">
-                <div class="rounded-lg border px-4 py-2 bg-slate-900 border-slate-700 text-white">
+                <div class="rounded-lg border-2 px-4 py-2 bg-white border-culti-green-3 text-culti-green-3">
                     <a href="{{ route('cart.index') }}">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="icon icon-tabler icon-tabler-basket w-5 h-5 {{ Route::is('cart.index') ? 'text-blue-500' : '' }}"
-                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.7"
                             stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <polyline points="7 10 12 4 17 10"></polyline>
@@ -307,10 +307,10 @@
                 <div class="text-white relative" x-data="{ isOpen: false }">
                     @guest
                         <button @click="isOpen = !isOpen" @keydown.escape="isOpen = false"
-                            class="flex items-center gap-2 border rounded-lg px-4 py-2 bg-slate-900 border-slate-700">
+                            class="flex items-center gap-2 border-2 rounded-lg px-4 py-2 bg-culti-green-3 border-culti-green-3">
                             <svg xmlns="http://www.w3.org/2000/svg" x-show="!isOpen"
                                 class="icon icon-tabler icon-tabler-align-right w-5 h-5" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <line x1="4" y1="6" x2="20" y2="6"></line>
@@ -319,7 +319,7 @@
                             </svg>
                             <svg xmlns="http://www.w3.org/2000/svg" x-cloak x-show="isOpen"
                                 class="icon icon-tabler icon-tabler-x w-5 h-5" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -329,20 +329,20 @@
                     @endguest
                     @auth
                         <button @click="isOpen = !isOpen" @keydown.escape="isOpen = false"
-                            class="flex items-center gap-2 border px-4 py-2 rounded-lg text-sm bg-slate-900 border-slate-700">
+                            class="flex items-center gap-2 border-2 px-4 py-2 rounded-lg text-sm bg-culti-green-3 border-culti-green-3">
                             <img src="{{ Auth::user()->avatar }}" alt="avatar"
-                                class="w-5 h-5 rounded-full border border-slate-700">
-                            {{ str()->limit(Auth::user()->name, 3) }}
+                                class="w-5 h-5 rounded-full border border-white">
+                            {{ str()->limit(Auth::user()->name, 4) }}
                             <svg xmlns="http://www.w3.org/2000/svg" x-show="!isOpen"
                                 class="icon icon-tabler icon-tabler-chevron-down w-4 h-4" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                             <svg xmlns="http://www.w3.org/2000/svg" x-show="isOpen"
                                 class="icon icon-tabler icon-tabler-chevron-up w-4 h-4" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="6 15 12 9 18 15"></polyline>
@@ -350,20 +350,20 @@
                         </button>
                     @endauth
                     <ul x-cloak x-show="isOpen" @click.away="isOpen = false"
-                        class="absolute font-normal bg-slate-800 shadow overflow-hidden rounded-lg w-48 border border-slate-700 mt-2 py-1 right-0 z-20">
+                        class="absolute font-normal bg-gray-100 shadow overflow-hidden rounded-lg w-48 border border-culti-green-3 mt-2 py-1 right-0 z-20">
                         <li>
                             <a href="{{ route('home') }}"
-                                class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500 {{ activeNav('home') }}">
+                                class="p-3 rounded-lg text-sm font-semibold flex items-center gap-2 {{ activeNav('home') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-home w-5 h-5" width="24" height="24"
-                                    viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="1.25" stroke="#054141" fill="none"
                                     stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                     <polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
                                     <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
                                     <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
                                 </svg>
-                                Home
+                                <span class="text-gray-600 hover:text-blue-400 transition-colors">Home</span>
                             </a>
                         </li>
                         <li>
@@ -371,7 +371,7 @@
                                 class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500 {{ activeNav('course*') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-device-laptop w-5 h-5" width="24"
-                                    height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
+                                    height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#054141"
                                     fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                     <line x1="3" y1="19" x2="21" y2="19"></line>
@@ -387,7 +387,7 @@
                                     class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500 {{ activeNav('category*') }}">
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         class="icon icon-tabler icon-tabler-category-2 w-5 h-5" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
+                                        height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#054141"
                                         fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <path d="M14 4h6v6h-6z"></path>
@@ -398,14 +398,14 @@
                                     Category
                                     <svg xmlns="http://www.w3.org/2000/svg" x-show="!isOpen"
                                         class="icon icon-tabler icon-tabler-chevron-down w-4 h-4" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
+                                        height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#054141"
                                         fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <polyline points="6 9 12 15 18 9"></polyline>
                                     </svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" x-show="isOpen"
                                         class="icon icon-tabler icon-tabler-chevron-up w-4 h-4" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
+                                        height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#054141"
                                         fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <polyline points="6 15 12 9 18 15"></polyline>
@@ -429,7 +429,7 @@
                                 class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500 {{ activeNav('review') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-message-2 w-5 h-5" width="24"
-                                    height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
+                                    height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#054141"
                                     fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                     <path
@@ -446,7 +446,7 @@
                                 class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500 {{ activeNav('showcase') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-source-code w-5 h-5" width="24"
-                                    height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
+                                    height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#054141"
                                     fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                     <path d="M14.5 4h2.5a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-10a3 3 0 0 1 -3 -3v-5">
@@ -565,7 +565,7 @@
                                 </li>
                             @endrole
                             <li>
-                                {{-- <a href="{{ route('logout') }}"
+                                <a href="{{ route('logout') }}"
                                     class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -583,7 +583,7 @@
                                         class="d-none">
                                         @csrf
                                     </form>
-                                </a> --}}
+                                </a>
                             </li>
                         @endauth
                     </ul>

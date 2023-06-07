@@ -2,16 +2,15 @@
 
 @section('content')
     @include('layouts.frontend.partials.hero')
-    <section
+    <section id="daftar-gratis"
         class="p-8 text-center bg-culti-green-3 font-semibold text-white text-lg md:text-2xl border-t border-b border-dashed border-slate-700">
-        <span class="text-red-500">{{ $user->count() }}</span> ORANG TELAH BELAJAR KURSUS DI LARADEV
+        <span class="text-red-500">{{ $user->count() }}</span> ORANG TELAH BELAJAR KURSUS DI CULTICADEMY
     </section>
-    <section id="daftar-gratis" class="bg-gray-100 p-10 w-full">
+    <section  class="bg-gray-100 p-10 w-full">
         <div class="flex flex-col gap-2 text-center items-center mb-10">
             <h1 class="text-2xl text-gray-800 font-semibold">COURSE</h1>
             <p class="text-sm text-gray-500 lg:mx-96">
-                Kami menyediakan berbagai macam pembahasan dengan studi kasus yang dapat membantu menjadi seorang Developer
-                Profesional.
+                Kami menyediakan berbagai macam pembahasan dengan studi kasus yang dapat membantu menjadi seorang Agropreneur.
             </p>
             <div class="w-60 bg-culti-green-3 h-1 mt-2"></div>
         </div>
@@ -36,7 +35,7 @@
         </div>
     </section>
     @if (Auth::check())
-        <section class="w-full p-6 bg-culti-green-4 border-t border-b border-dashed border-gray-700">
+        <section class="w-full p-6 bg-culti-green-4 border-t border-b border-line border-white">
             <div class="flex flex-col items-center justify-center p-4 space-y-8 md:p-10 md:px-24 xl:px-48">
                 <h1 class="text-2xl md:text-3xl font-bold leading-none text-center text-white">
                     TUNGGU APA LAGI ?
@@ -60,7 +59,7 @@
             </div>
         </section>
     @else
-        <section class="w-full p-6 bg-culti-green-4 border-t border-b border-dashed border-gray-700">
+        <section class="w-full p-6 bg-culti-green-4 border-t border-b border-line border-white">
             <div class="flex flex-col items-center justify-center p-4 space-y-8 md:p-10 md:px-24 xl:px-48">
                 <h1 class="text-2xl md:text-3xl font-bold leading-none text-center text-white">
                     TUNGGU APA LAGI ?

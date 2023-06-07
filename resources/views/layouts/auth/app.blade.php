@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-image: url(dist/img/background.png); background-size: cover; background-position: center;">
     <div class="login-box">
         <div class="card card-outline card-primary">
             <div class="card-header text-center">

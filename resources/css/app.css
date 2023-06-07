@@ -21,17 +21,21 @@
 
 @media (min-width: 577px) {
   .navbar-container {
-      height: 62px; /* Tinggi navbar pada PC */
+      height: 62px; /* PC */
   }
 }
 
+.swal2-container {
+  z-index: 10000 !important;
+}
+
 .content-section {
-  margin-top: calc(62px); /* Sesuaikan margin atas sesuai dengan tinggi navbar dan padding */
+  margin-top: calc(62px); /* mobile */
 }
 
 @media (max-width: 576px) {
   .content-section {
-      margin-top: calc(59px); /* Sesuaikan margin atas sesuai dengan tinggi navbar dan padding pada perangkat mobile */
+      margin-top: calc(59px);
   }
 }
 
