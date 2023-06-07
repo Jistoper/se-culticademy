@@ -6,7 +6,7 @@
         details="Disini review yang diberikan kami tampilkan secara menyeluruh tanpa adanya perubahan review agar kami semakin baik dalam menyajikan konten - konten premium maupun gratis."
         :data="$reviews" cardtitle="Review">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-2 w-10 h-10 md:w-20 md:h-20"
-            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
+            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#235f5f" fill="none"
             stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M12 20l-3 -3h-2a3 3 0 0 1 -3 -3v-6a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-2l-3 3">
@@ -18,7 +18,7 @@
     <!-- serach section -->
     <x-landing.search-section :url="route('review')" />
     <!-- review section -->
-    <div class="w-full bg-slate-700 p-3 border border-dashed border-slate-800">
+    <div class="w-full bg-white p-3 border border-line border-gray-100">
         <div class="container mx-auto">
             <div class="flex flex-row overflow-x-auto md:grid md:grid-cols-3 gap-4 items-start">
                 @foreach ($reviews as $review)

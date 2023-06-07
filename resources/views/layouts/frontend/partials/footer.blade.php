@@ -5,7 +5,7 @@
                 <a href="/" class="font-bold text-2xl text-white">
                     Culticademy
                 </a>
-                <p class="max-w-md mt-2 text-sm text-center md:text-start text-gray-200">
+                <p class="max-w-md mt-2 text-sm text-center md:text-start text-gray-300">
                     Website Belajar Agrikultur Indonesia Terlengkap dan Mudah Dipahami.
                 </p>
             </div>

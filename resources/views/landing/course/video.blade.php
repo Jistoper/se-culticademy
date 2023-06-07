@@ -1,24 +1,24 @@
 @extends('layouts.frontend.app', ['title' => 'Homepage'])
 @section('content')
-    <div class="w-full bg-slate-700 p-5 md:p-20">
+    <div class="w-full bg-gray-100 p-5 md:p-20">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-4">
                 <div class="col-span-12 md:col-span-7">
-                    <div class="aspect-w-16 aspect-h-8 md:aspect-w-12 md:aspect-h-8 border rounded-lg">
+                    <div class="aspect-w-16 aspect-h-8 md:aspect-w-12 md:aspect-h-8 h-80 md:h-70 lg:h-80 border rounded-lg">
                         <iframe src="https://www.youtube.com/embed/{{ $video->video_code }}" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen class="rounded-lg"></iframe>
+                            allowfullscreen class="rounded-lg w-full h-full"></iframe>
                     </div>
                 </div>
                 <div class="col-span-12 md:col-span-5">
                     <div class="p-0 md:p-4">
-                        <h1 class="text-white text-base font-semibold">{{ $course->name }}</h1>
-                        <p class="text-sm text-gray-400 mb-2 text-justify mt-1">
+                        <h1 class="text-gray-800 text-base font-semibold">{{ $course->name }}</h1>
+                        <p class="text-sm text-gray-600 mb-2 text-justify mt-1">
                             {{ $course->description }}
                         </p>
                         <div class="flex flex-row items-center justify-end gap-2 pb-5 mt-5">
-                            <p class="text-xs text-gray-400">{{ $course->videos->count() }} Episodes</p>
-                            <a href="" class="text-xs text-gray-400 underline hover:text-blue-400">
+                            <p class="text-xs text-gray-500">{{ $course->videos->count() }} Episodes</p>
+                            <a href="" class="text-xs text-gray-500 underline hover:text-blue-400">
                                 {{ $course->category->name }}
                             </a>
                             <div class="flex items-center text-xs text-yellow-500 gap-1">
@@ -169,7 +169,7 @@
             </div>
         </div>
     </div>
-    <div id="review" class="w-full bg-gray-800 border-t border-b p-5 md:p-20 border-dashed border-slate-700">
+    <div id="review" class="w-full bg-culti-green-4 border-t border-b p-5 md:p-20 border-dashed border-slate-700">
         <div class="container mx-auto">
             <div class="p-4">
                 <div class="flex flex-col gap-2 text-center items-center mb-10">
@@ -177,7 +177,7 @@
                     <p class="text-sm text-gray-400 lg:mx-96">
                         Kumpulan review dari para member yang telah membeli course ini
                     </p>
-                    <div class="w-60 bg-gray-700 h-1 mt-2"></div>
+                    <div class="w-60 bg-gray-100 h-1 mt-2"></div>
                 </div>
                 <div class="flex flex-row overflow-x-auto md:grid md:grid-cols-3 gap-4 items-start">
                     @foreach ($reviews as $review)

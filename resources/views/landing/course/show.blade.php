@@ -1,12 +1,12 @@
 @extends('layouts.frontend.app', ['title' => 'Course Detail'])
 
 @section('content')
-    <div class="w-full bg-slate-700 p-5 md:p-20">
+    <div class="w-full bg-culti-green-4 p-5 md:p-20">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-4 md:gap-20">
                 <div class="md:col-span-2">
                     <div class="flex flex-row gap-4 text-xs justify-center md:justify-start mt-4">
-                        <div class="text-slate-400 flex items-center gap-2">
+                        <div class="text-gray-100 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list w-5 h-5"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
                                 fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -20,7 +20,7 @@
                             </svg>
                             {{ $course->videos()->count() }} Episode
                         </div>
-                        <div class="text-slate-400 flex items-center gap-2 ">
+                        <div class="text-gray-100 flex items-center gap-2 ">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users w-5 h-5"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
                                 fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -32,7 +32,7 @@
                             </svg>
                             {{ $enrolled }} Member
                         </div>
-                        <div class="text-slate-400 flex items-center gap-2">
+                        <div class="text-gray-100 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-2 w-5 h-5"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
                                 fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -48,7 +48,7 @@
                     <h1 class="text-lg font-semibold lg:text-2xl py-4 text-white text-center md:text-start">
                         {{ $course->name }}
                     </h1>
-                    <p class="text-sm text-center md:text-base md:text-justify text-gray-400">{{ $course->description }}
+                    <p class="text-sm text-center md:text-base md:text-justify text-gray-300">{{ $course->description }}
                     </p>
                     <div class="mt-5">
                         <h1 class="text-3xl md:text-6xl text-green-500 font-mono text-center md:text-start">
