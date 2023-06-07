@@ -19,7 +19,7 @@
     <div class="login-box">
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="{{ route('admin.dashboard') }}" class="h1">
+                <a href="{{ route('home') }}" class="h1">
                     <img src="dist\img\logo.png" alt="Culticademy Logo" class="icon icon-tabler icon-tabler-brand-tabler"
                         width="48" height="48">
                     Culticademy
