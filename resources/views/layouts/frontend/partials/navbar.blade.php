@@ -1,18 +1,18 @@
-<div class="w-full bg-culti-green-3 p-3 border-b border-culti-green border-line">
+<div class="w-full bg-white p-3 border border-culti-green border-line navbar-container">
     <div class="container mx-auto">
         <div class="flex items-center justify-between">
             <!-- NavMenu -->
             <ul class="flex items-center justify-center gap-5">
                 <li>
-                    <a href="/" class="flex items-center text-lg text-white font-semibold">
-                        {{-- <img src="dist\img\logo.png" alt="Culticademy Logo" class="icon icon-tabler icon-tabler-brand-tabler"
-                        width="40" height="40"> --}}
+                    <a href="/" class="flex items-center text-lg text-culti-green font-semibold">
+                        <img src="dist\img\logo.png" alt="Culticademy Logo" class="icon icon-tabler icon-tabler-brand-tabler"
+                        width="35" height="35">
                         Culticademy
                     </a>
                 </li>
                 <li class="hidden lg:flex">
                     <a href="{{ route('home') }}"
-                        class="text-sm font-semibold text-white flex items-center gap-2 hover:underline {{ activeNav('home') }}">
+                        class="text-sm font-semibold text-gray-800 flex items-center gap-2 hover:underline {{ activeNav('home') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home w-5 h-5"
                             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
                             fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -26,7 +26,7 @@
                 </li>
                 <li class="hidden lg:flex">
                     <a href="{{ route('course.index') }}"
-                        class="text-sm font-semibold text-white flex items-center gap-2 hover:underline {{ activeNav('course.index') }}">
+                        class="text-sm font-semibold text-gray-800 flex items-center gap-2 hover:underline {{ activeNav('course.index') }}">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="icon icon-tabler icon-tabler-device-laptop w-5 h-5" width="24" height="24"
                             viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -41,7 +41,7 @@
                 <li class="hidden lg:flex">
                     <div class="relative" x-data="{ isOpen: false }">
                         <button @click="isOpen = !isOpen" @keydown.escape="isOpen = false"
-                            class="flex items-center font-semibold gap-2 text-sm text-white hover:underline {{ activeNav('category*') }}">
+                            class="flex items-center font-semibold gap-2 text-sm text-gray-800 hover:underline {{ activeNav('category*') }}">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-category-2 w-5 h-5" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -75,7 +75,7 @@
                                     <a href="{{ route('category', $category->slug) }}"
                                         class="flex items-center p-3 hover:text-blue-500 rounded-lg text-sm text-white">
                                         <img src="{{ $category->image }}" class="w-5 h-5 object-cover" />
-                                        <span class="ml-2 text-gray-500 hover:text-blue-400 transition-colors">{{ $category->name }}</span>
+                                        <span class="ml-2 text-gray-600 hover:text-blue-400 transition-colors">{{ $category->name }}</span>
                                     </a>
                                 </li>
                             @endforeach
@@ -84,7 +84,7 @@
                 </li>
                 <li class="hidden lg:flex">
                     <a href="{{ route('review') }}"
-                        class="text-sm font-semibold text-white flex items-center gap-2 hover:underline {{ activeNav('review') }}">
+                        class="text-sm font-semibold text-gray-800 flex items-center gap-2 hover:underline {{ activeNav('review') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-2 w-5 h-5"
                             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
                             stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -100,7 +100,7 @@
                 </li>
                 <li class="hidden lg:flex">
                     <a href="{{ route('showcase') }}"
-                        class="text-sm font-semibold text-white flex items-center gap-2 hover:underline {{ activeNav('showcase') }}">
+                        class="text-sm font-semibold text-gray-800 flex items-center gap-2 hover:underline {{ activeNav('showcase') }}">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="icon icon-tabler icon-tabler-source-code w-5 h-5" width="24" height="24"
                             viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -118,9 +118,9 @@
             <div class="hidden md:flex items-center gap-2 text-white">
                 @guest
                     <a href="{{ route('login') }}"
-                        class="text-white font-semibold flex items-center border px-4 py-2 gap-2 rounded-lg text-xs bg-slate-900 border-slate-900 hover:bg-white hover:text-slate-900">
+                        class="text-culti-green-5 font-bold flex items-center border-2 px-4 py-2 gap-2 rounded-lg text-xs bg-white border-culti-green-5 hover:bg-culti-green-5 hover:text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-check w-5 h-5"
-                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor"
                             fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <circle cx="9" cy="7" r="4"></circle>
@@ -130,9 +130,9 @@
                         Sign In
                     </a>
                     <a href="{{ route('register') }}"
-                        class="font-semibold text-slate-900 flex items-center border px-4 py-2 gap-2 rounded-lg text-xs bg-slate-100 border-slate-900 hover:bg-slate-900 hover:text-white">
+                        class="text-culti-green-4 font-bold flex items-center border-2 px-4 py-2 gap-2 rounded-lg text-xs bg-white border-culti-green-4 hover:bg-culti-green-4 hover:text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus w-5 h-5"
-                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor"
                             fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <circle cx="9" cy="7" r="4"></circle>
@@ -143,10 +143,10 @@
                     </a>
                 @endguest
                 @auth
-                    <a href="{{ route('cart.index') }}" class="rounded-lg border px-4 py-2 bg-white border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white">
+                    <a href="{{ route('cart.index') }}" class="rounded-lg border-2 px-4 py-2 bg-white border-culti-green-3 text-culti-green-3 hover:bg-culti-green-3 hover:text-white">
                           <svg xmlns="http://www.w3.org/2000/svg"
                             class="icon icon-tabler icon-tabler-basket w-5 h-5 {{ Route::is('cart.index') }}"
-                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.8"
                             stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <polyline points="7 10 12 4 17 10"></polyline>
@@ -156,7 +156,7 @@
                     </a>
                     <div class="relative" x-data="{ isOpen: false }">
                         <button @click="isOpen = !isOpen" @keydown.escape="isOpen = false"
-                            class="flex items-center gap-2 border px-4 py-2 rounded-lg text-sm bg-white border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white">
+                            class="flex items-center gap-2 border px-4 py-2 rounded-lg text-sm bg-culti-green-3 border-2 border-culti-green-3 text-white hover:bg-slate-900 hover:bg-white hover:text-culti-green-3">
                             <img src="{{ Auth::user()->avatar }}" alt="avatar"
                                 class="w-5 h-5 rounded-full border border-gray-500">
                             {{ Auth::user()->name }}
@@ -183,7 +183,7 @@
                                         class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-apps w-5 h-5" width="24" height="24"
-                                            viewBox="0 0 24 24" stroke-width="1.25" stroke="#889E81" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.25" stroke="#054141" fill="none"
                                             stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <rect x="4" y="4" width="6" height="6"
@@ -195,14 +195,14 @@
                                             <line x1="14" y1="7" x2="20" y2="7"></line>
                                             <line x1="17" y1="4" x2="17" y2="10"></line>
                                         </svg>
-                                        <span class="ml-2 text-gray-500 hover:text-blue-400 transition-colors">Dashboard</span>
+                                        <span class="ml-2 text-gray-600 hover:text-blue-400 transition-colors">Dashboard</span>
                                     </a>
                                 @else
                                     <a href="{{ route('member.dashboard') }}"
                                         class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-apps w-5 h-5" width="24" height="24"
-                                            viewBox="0 0 24 24" stroke-width="1.25" stroke="#889E81" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.25" stroke="#054141" fill="none"
                                             stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <rect x="4" y="4" width="6" height="6"
@@ -214,7 +214,7 @@
                                             <line x1="14" y1="7" x2="20" y2="7"></line>
                                             <line x1="17" y1="4" x2="17" y2="10"></line>
                                         </svg>
-                                        <span class="ml-2 text-gray-500 hover:text-blue-400 transition-colors">Dashboard</span>
+                                        <span class="ml-2 text-gray-600 hover:text-blue-400 transition-colors">Dashboard</span>
                                     </a>
                                 @endrole
                             </li>
@@ -224,28 +224,28 @@
                                         class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-user-circle w-5 h-5" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#889E81"
+                                            height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#054141"
                                             fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <circle cx="12" cy="12" r="9"></circle>
                                             <circle cx="12" cy="10" r="3"></circle>
                                             <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
                                         </svg>
-                                        <span class="ml-2 text-gray-500 hover:text-blue-400 transition-colors">Profile</span>
+                                        <span class="ml-2 text-gray-600 hover:text-blue-400 transition-colors">Profile</span>
                                     </a>
                                 @else
                                     <a href="{{ route('member.profile.index') }}"
                                         class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-user-circle w-5 h-5" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#889E81"
+                                            height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#054141"
                                             fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <circle cx="12" cy="12" r="9"></circle>
                                             <circle cx="12" cy="10" r="3"></circle>
                                             <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
                                         </svg>
-                                        <span class="ml-2 text-gray-500 hover:text-blue-400 transition-colors">Profile</span>
+                                        <span class="ml-2 text-gray-600 hover:text-blue-400 transition-colors">Profile</span>
                                     </a>
                                 @endrole
                             </li>

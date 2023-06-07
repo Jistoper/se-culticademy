@@ -1,5 +1,5 @@
 @props(['course'])
-<div class="bg-slate-900 rounded-lg shadow-custom">
+<div class="bg-culti-green-3 rounded-lg shadow-custom">
     <img class="rounded-t-lg" src="{{ $course->image }}" alt="product image">
     <div class="p-4 md:p-5 text-center">
         <a href="{{ route('course.show', $course->slug) }}"
@@ -61,7 +61,7 @@
             </div>
         </div>
     </div>
-    <div class="border-t border-white border-dashed p-4">
+    <div class="border-t border-white border-line p-4">
         <div class="flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg"
                 class="icon icon-tabler icon-tabler-user-circle w-5 h-5 text-slate-400" width="24" height="24"

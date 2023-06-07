@@ -8,7 +8,7 @@
                     <div class="card-body box-profile">
                         <div class="text-center">
                             <img class="img-fluid" src="{{ asset($course->image) }}" alt="cover">
-                        </div>                        
+                        </div>
                         <h3 class="profile-username text-center">{{ $course->name }}</h3>
                         <h3 class="text-success text-center font-weight-bold">
                             <sup>Rp</sup>

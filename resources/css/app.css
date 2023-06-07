@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: white;
+  padding: 10px;
+  border-bottom: 2px solid #054141;
+}
+
+@media (max-width: 576px) {
+  .navbar-container {
+      height: 59px;
+  }
+}
+
+@media (min-width: 577px) {
+  .navbar-container {
+      height: 62px; /* Tinggi navbar pada PC */
+  }
+}
+
+.content-section {
+  margin-top: calc(62px); /* Sesuaikan margin atas sesuai dengan tinggi navbar dan padding */
+}
+
+@media (max-width: 576px) {
+  .content-section {
+      margin-top: calc(59px); /* Sesuaikan margin atas sesuai dengan tinggi navbar dan padding pada perangkat mobile */
+  }
+}
+
 .shadow-custom {
     box-shadow: 10px 10px 0 rgba(255, 255, 255, 0.1);
 }
@@ -16,9 +49,9 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 36px;
-    height: 36px;
-    border: 1px solid rgb(51, 65, 85);
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgb(174, 14, 14);
     border-radius: 20%;
     cursor: pointer;
     position: relative;
@@ -78,64 +111,4 @@
   /* button click effect*/
   .Btn:active {
     transform: translate(2px ,2px);
-  }
-
-  custom-button {
-    --primary-color: #645bff;
-    --secondary-color: #fff;
-    --hover-color: #111;
-    --arrow-width: 10px;
-    --arrow-stroke: 2px;
-    box-sizing: border-box;
-    border: 0;
-    border-radius: 20px;
-    color: var(--secondary-color);
-    padding: 1em 1.8em;
-    background: var(--primary-color);
-    display: flex;
-    transition: 0.2s background;
-    align-items: center;
-    gap: 0.6em;
-    font-weight: bold;
-  }
-  
-  custom-button .arrow-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  custom-button .arrow {
-    margin-top: 1px;
-    width: var(--arrow-width);
-    background: var(--primary-color);
-    height: var(--arrow-stroke);
-    position: relative;
-    transition: 0.2s;
-  }
-  
-  custom-button .arrow::before {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    border: solid var(--secondary-color);
-    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
-    display: inline-block;
-    top: -3px;
-    right: 3px;
-    transition: 0.2s;
-    padding: 3px;
-    transform: rotate(-45deg);
-  }
-  
-  custom-button:hover {
-    background-color: var(--hover-color);
-  }
-  
-  custom-button:hover .arrow {
-    background: var(--secondary-color);
-  }
-  
-  custom-button:hover .arrow:before {
-    right: 0;
   }

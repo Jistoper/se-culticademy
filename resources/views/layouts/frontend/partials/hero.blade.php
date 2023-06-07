@@ -1,17 +1,17 @@
-<div class="w-full py-10 text-white bg-white">
+<div class="w-full py-10 text-white bg-gray-200" style="background-image: url(dist/img/background.png); background-size: cover; background-position: center;">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
             <div class="col-span-12 md:col-span-7 flex flex-col gap-4 lg:gap-8">
                 <h1
-                    class="text-center md:text-start text-2xl font-semibold md:text-6xl text-culti-green flex items-center justify-center md:justify-start">
-                    <img src="dist\img\logo.png" alt="Culticademy Logo" class="icon icon-tabler icon-tabler-brand-tabler"
-                        width="40" height="40">
+                    class="text-center md:text-start text-2xl font-semibold md:text-6xl text-white flex items-center justify-center md:justify-start">
+                    {{-- <img src="dist\img\logo.png" alt="Culticademy Logo" class="icon icon-tabler icon-tabler-brand-tabler"
+                        width="40" height="40"> --}}
                     Culticademy
                 </h1>
-                <p class="text-sm md:text-lg text-center md:text-start text-gray-500">
+                {{-- <p class="text-sm md:text-lg text-center md:text-start text-white">
                     Selamat Datang di Culticademy
-                </p>
-                <p class="text-sm md:text-lg text-center md:text-start text-gray-500">
+                </p> --}}
+                <p class="text-sm md:text-lg text-center md:text-start text-white">
                     Lorem ipsum dolor sit amet. Ut consequatur quibusdam et dignissimos Quis eum voluptas rerum sed omnis nemo. Non excepturi doloremque aut cupiditate tempora aut voluptates dolor! Rem voluptatem reprehenderit ut quia nihil qui voluptate rerum est placeat modi in sapiente perferendis. Aut beatae voluptates sed eligendi omnis est galisum fugit ea totam vitae ad porro ducimus.
                 </p>
                 <div class="flex flex-row gap-4 items-center justify-center md:justify-start">

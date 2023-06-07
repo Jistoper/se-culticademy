@@ -13,6 +13,7 @@ module.exports = {
         'culti-green-3': '#054141',
         'culti-green-4': '#235f5f',
         'culti-green-5': '#5f9b9b',
+        'color-1': '#f8f7f6',
       },
     },
   },

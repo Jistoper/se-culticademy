@@ -17,7 +17,9 @@
     @include('layouts.frontend.partials.navbar')
 
     <!-- content -->
-    @yield('content')
+    <div class="content-section">
+        @yield('content')
+    </div>
 
     <!-- toastr -->
     @include('sweetalert::alert')
