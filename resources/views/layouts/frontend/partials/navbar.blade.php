@@ -5,7 +5,7 @@
             <ul class="flex items-center justify-center gap-5">
                 <li>
                     <a href="/" class="flex items-center text-lg text-culti-green-3 font-semibold">
-                        <img src="dist\img\logo.png" alt="Culticademy Logo" class="icon icon-tabler icon-tabler-brand-tabler"
+                        <img src="\dist\img\logo.png" alt="Culticademy Logo" class="icon icon-tabler icon-tabler-brand-tabler"
                         width="35" height="35">
                         Culticademy
                     </a>
@@ -415,7 +415,7 @@
                                     @foreach ($categories as $category)
                                         <li>
                                             <a href="{{ route('category', $category->slug) }}"
-                                                class="flex items-center p-3 text-sm text-white ml-3">
+                                                class="flex items-center p-3 text-sm text-gray-600 ml-3">
                                                 <img src="{{ $category->image }}" class="w-5 h-5 object-cover" />
                                                 <span class="ml-2">{{ $category->name }}</span>
                                             </a>
