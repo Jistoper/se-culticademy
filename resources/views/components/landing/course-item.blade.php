@@ -1,13 +1,13 @@
 @props(['course'])
-<div class="bg-culti-green-3 rounded-lg shadow-custom">
+<div class="bg-white rounded-lg border-2 border-white">
     <img class="rounded-t-lg" src="{{ $course->image }}" alt="product image">
     <div class="p-4 md:p-5 text-center">
         <a href="{{ route('course.show', $course->slug) }}"
-            class="text-lg font-semibold text-white hover:text-red-500 hover:underline">
+            class="text-lg font-semibold text-gray-700 hover:text-red-500">
             {{ $course->name }}
         </a>
         <div class="flex flex-row gap-3 text-xs justify-center my-4">
-            <div class="text-white flex items-center gap-1 align-bottom">
+            <div class="text-gray-600 flex items-center gap-1 align-bottom">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list w-5 h-5" width="24"
                     height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -21,7 +21,7 @@
                 </svg>
                 {{ $course->videos_count }} Episode
             </div>
-            <div class="text-white flex items-center gap-1 align-bottom">
+            <div class="text-gray-600 flex items-center gap-1 align-bottom">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users w-5 h-5"
                     width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
                     fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -33,7 +33,7 @@
                 </svg>
                 {{ $course->enrolled }} Member
             </div>
-            <div class="text-white flex items-center gap-1 align-bottom">
+            <div class="text-gray-600 flex items-center gap-1 align-bottom">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-2 w-5 h-5"
                     width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
                     fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -61,18 +61,18 @@
             </div>
         </div>
     </div>
-    <div class="border-t border-white border-line p-4">
+    <div class="bg-white border-t border-culti-green-3 border-dashed p-4">
         <div class="flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-user-circle w-5 h-5 text-slate-400" width="24" height="24"
-                viewBox="0 0 24 24" stroke-width="1.25" stroke="white" fill="none" stroke-linecap="round"
+                class="icon icon-tabler icon-tabler-user-circle w-5 h-5 text-gray-700" width="24" height="24"
+                viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none" stroke-linecap="round"
                 stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <circle cx="12" cy="12" r="9"></circle>
                 <circle cx="12" cy="10" r="3"></circle>
                 <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
             </svg>
-            <div class="text-white font-medium text-sm">{{ $course->user->name }}</div>
+            <div class="text-gray-700 font-medium text-sm">{{ $course->user->name }}</div>
         </div>
     </div>
 </div>
