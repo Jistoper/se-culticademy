@@ -6,22 +6,47 @@
             <div class="flex flex-col items-center justify-center gap-y-4 md:gap-y-8 text-center">
                 <img src="{{ asset('pay.svg') }}" class="w-1/2 md:w-1/3 object-cover object-center">
                 <h1 class="text-gray-100 font-semibold text-lg md:text-2xl mx-0 md:mx-80">
-                    Pesanan anda telah kami konfirmasi, Silahkan lanjutkan dengan melakukan
-                    pembayaran
+                    Pesanan anda telah kami konfirmasi, Terima kasih telah membeli course
                 </h1>
+                <div class="bg-white rounded-lg shadow overflow-hidden">
+                    <table class="w-full">
+                        <tbody>
+                            <tr>
+                                <th class="px-4 py-3 bg-gray-200 text-left">Invoice</th>
+                                <td class="px-4 py-3">{{ $invoice->invoice }}</td>
+                            </tr>
+                            <tr>
+                                <th class="px-4 py-3 bg-gray-200 text-left">User ID</th>
+                                <td class="px-4 py-3">{{ $invoice->user_id }}</td>
+                            </tr>
+                            <tr>
+                                <th class="px-4 py-3 bg-gray-200 text-left">Name</th>
+                                <td class="px-4 py-3">{{ $invoice->name }}</td>
+                            </tr>
+                            <tr>
+                                <th class="px-4 py-3 bg-gray-200 text-left">Grand Total</th>
+                                <td class="px-4 py-3">{{ $invoice->grand_total }}</td>
+                            </tr>
+                            <tr>
+                                <th class="px-4 py-3 bg-gray-200 text-left">Status</th>
+                                <td class="px-4 py-3">{{ $invoice->status }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <button
                     class="px-4 py-2 rounded-lg bg-red-800 text-white hover:scale-110 hover:duration-200 flex items-center gap-2 text-sm border"
                     id="pay-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-wallet mr-1" width="24"
-                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-device-laptop w-5 h-5" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#ffffff"
+                        fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path
-                            d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12">
-                        </path>
-                        <path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"></path>
-                    </svg>
-                    Bayar Sekarang
+                        <line x1="3" y1="19" x2="21" y2="19"></line>
+                        <rect x="5" y="6" width="14" height="10"
+                        rx="1"></rect>
+                        </svg>
+                    Cek Course
                 </button>
             </div>
         </div>
@@ -29,25 +54,10 @@
 @endsection
 
 @push('js')
-    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
-        data-client-key="{{ config('services.midtrans.serverKey') }}"></script>
-    {{-- <script type="text/javascript">
-        var payButton = document.getElementById('pay-button');
-        payButton.addEventListener('click', function() {
-            window.snap.pay('{{ $snapToken }}', {
-                // Optional
-                onSuccess: function() {
-                    window.location.href = "{{ route('home') }}";
-                },
-                // Optional
-                onPending: function() {
-                    window.location.href = "{{ route('home') }}";
-                },
-                // Optional
-                onError: function() {
-                    window.location.href = "{{ route('home') }}";
-                }
-            });
-        });
-    </script> --}}
+<script type="text/javascript">
+    var payButton = document.getElementById('pay-button');
+    payButton.addEventListener('click', function() {
+        window.location.href = "{{ route('member.mycourse') }}";
+    });
+</script>
 @endpush
