@@ -6,10 +6,10 @@
         class="p-8 text-center bg-culti-green-3 font-semibold text-white text-lg md:text-2xl border-t border-b border-dashed border-slate-700">
         <span class="text-red-500">{{ $user->count() }}</span> ORANG TELAH BELAJAR KURSUS DI CULTICADEMY
     </section>
-    <section  class="bg-gray-100 p-10 w-full">
+    <section  class="bg-gray-200 p-10 w-full">
         <div class="flex flex-col gap-2 text-center items-center mb-10">
             <h1 class="text-2xl text-gray-800 font-semibold">COURSE</h1>
-            <p class="text-sm text-gray-500 lg:mx-96">
+            <p class="text-sm text-gray-600 lg:mx-96">
                 Kami menyediakan berbagai macam pembahasan dengan studi kasus yang dapat membantu menjadi seorang Agropreneur.
             </p>
             <div class="w-60 bg-culti-green-3 h-1 mt-2"></div>
@@ -21,7 +21,7 @@
         </div>
         <div class="flex justify-center text-center mt-14">
             <a href="{{ route('course.index') }}"
-                class="px-4 py-2 rounded-lg bg-white text-culti-green-3 hover:text-white hover:bg-culti-green-3 hover:duration-200 flex items-center gap-2 text-lg border-2 border-culti-green-3 hover:transition-colors">
+                class="px-4 py-2 rounded-lg bg-culti-green-3 text-white hover:bg-culti-green-4 hover:duration-200 flex items-center gap-2 text-lg border-2 border-culti-green-3 hover:border-culti-green-4 hover:transition-colors">
                 Lihat Semua Course
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right w-5 h-5"
                     width="24" height="24" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"
