@@ -41,9 +41,9 @@
                     </a>
                 </div>
             </div>
-            <div class="hidden md:flex md:col-span-5">
-                <img src="{{ asset('learn.svg') }}" class="object-cover">
-            </div>
+            {{-- <div class="hidden md:flex md:col-span-5">
+                <img src="dist\img\logo.png" class="object-cover">
+            </div> --}}
         </div>
     </div>
 </div>

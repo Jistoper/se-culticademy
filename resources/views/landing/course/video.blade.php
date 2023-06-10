@@ -4,7 +4,7 @@
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-4">
                 <div class="col-span-12 md:col-span-7">
-                    <div class="aspect-w-16 aspect-h-8 md:aspect-w-12 md:aspect-h-8 h-80 md:h-70 lg:h-80 border rounded-lg">
+                    <div class="aspect-w-16 aspect-h-9 md:aspect-w-12 md:aspect-h-8 h-90 md:h-90 lg:h-60 border rounded-lg">
                         <iframe src="https://www.youtube.com/embed/{{ $video->video_code }}" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen class="rounded-lg w-full h-full"></iframe>
