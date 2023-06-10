@@ -65,7 +65,7 @@
                                 <a href="{{ route('admin.course.index') }}"
                                     class="nav-link {{ active('admin.course.index') }}">
                                     <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="icon icon-tabler icon-tabler-corner-down-right-double nav-icon text-white"
+                                        class="icon icon-tabler icon-tabler-corner-down-right-double nav-icon text-black"
                                         width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
                                         stroke="currentColor" fill="none" stroke-linecap="round"
                                         stroke-linejoin="round">
@@ -73,14 +73,14 @@
                                         <path d="M4 5v6a3 3 0 0 0 3 3h7"></path>
                                         <path d="M10 10l4 4l-4 4m5 -8l4 4l-4 4"></path>
                                     </svg>
-                                    <p class="text-white">List Course</p>
+                                    <p class="text-gray">List Course</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('admin.course.create') }}"
                                     class="nav-link {{ active('admin.course.create') }}">
                                     <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="icon icon-tabler icon-tabler-corner-down-right-double nav-icon text-white"
+                                        class="icon icon-tabler icon-tabler-corner-down-right-double nav-icon text-black"
                                         width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
                                         stroke="currentColor" fill="none" stroke-linecap="round"
                                         stroke-linejoin="round">
@@ -88,7 +88,7 @@
                                         <path d="M4 5v6a3 3 0 0 0 3 3h7"></path>
                                         <path d="M10 10l4 4l-4 4m5 -8l4 4l-4 4"></path>
                                     </svg>
-                                    <p class="text-white">Add New Course</p>
+                                    <p class="text-black">Add New Course</p>
                                 </a>
                             </li>
                         </ul>
