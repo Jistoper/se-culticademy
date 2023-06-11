@@ -133,3 +133,19 @@ Route::group(['as' => 'member.', 'prefix' => 'account', 'middleware' => ['auth',
         Route::put('/profile/password/{user}', 'updatePassword')->name('password');
     });
 });
+
+
+// forum route
+// Route::group(['as' => 'forum.', 'prefix' =>'forum', 'middleware' => ['auth']], function(){
+//     Route::get('/', [ForumController::class, 'index'])->name('index');
+//     Route::get('/create', [ForumController::class, 'create'])->name('create');
+//     Route::post('/', [ForumController::class, 'store'])->name('store');
+//     Route::get('/{id}', [ForumController::class, 'show'])->name('show');
+//     Route::get('/{id}/edit', [ForumController::class, 'edit'])->name('edit');
+//     Route::put('/{id}', [ForumController::class, 'update'])->name('update');
+//     Route::delete('/{id}', [ForumController::class, 'destroy'])->name('destroy');
+//     Route::post('/{id}/discussions', [ForumController::class, 'storeDiscussion'])->name('storeDiscussion');
+//     Route::delete('/discussions/{id}', [ForumController::class, 'destroyDiscussion'])->name('destroyDiscussion');
+// });
+
+
