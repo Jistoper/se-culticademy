@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ForumDiscussion extends Model
 {
     use HasFactory;
+    protected $table = 'forums_discussion';
 
     public function forum()
     {

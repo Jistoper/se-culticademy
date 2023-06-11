@@ -3,7 +3,7 @@
 @section('content')
     <div class="flex items-center justify-between mb-6">
         <h2 class="text-xl font-medium">Forums</h2>
-        <a href="{{ route('forums.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create Forum</a>
+        <a href="{{ route('forum.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create Forum</a>
     </div>
 
     <div class="bg-white shadow-md rounded my-6">
@@ -21,8 +21,8 @@
                         <td class="py-4 px-6 border-b border-grey-light">{{ $forum->title }}</td>
                         <td class="py-4 px-6 border-b border-grey-light">{{ $forum->description }}</td>
                         <td class="py-4 px-6 border-b border-grey-light">
-                            <a href="{{ route('forums.edit', $forum->id) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">Edit</a>
-                            <form action="{{ route('forums.destroy', $forum->id) }}" method="POST" class="inline-block">
+                            <a href="{{ route('forum.edit', $forum->id) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">Edit</a>
+                            <form action="{{ route('forum.destroy', $forum->id) }}" method="POST" class="inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-red hover:bg-red-dark">Delete</button>

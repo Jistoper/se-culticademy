@@ -17,7 +17,7 @@ class ForumController extends Controller
     public function index()
     {
         $forums = Forum::all();
-        return view('forums.index', compact('forums'));
+        return view('forum.index', compact('forums'));
     }
 
     /**
@@ -27,7 +27,7 @@ class ForumController extends Controller
      */
     public function create()
     {
-        return view('forums.create');
+        return view('forum.create');
     }
 
     /**
@@ -44,7 +44,7 @@ class ForumController extends Controller
         $forum->user_id = Auth::id();
         $forum->save();
 
-        return redirect()->route('forums.index');
+        return redirect()->route('forum.index');
     }
 
     /**
@@ -57,7 +57,7 @@ class ForumController extends Controller
     {
         $forum = Forum::findOrFail($id);
         $discussions = ForumDiscussion::where('forum_id', $id)->orderBy('created_at', 'asc')->get();
-        return view('forums.show', compact('forum', 'discussions'));
+        return view('forum.show', compact('forum', 'discussions'));
     }
 
     /**
@@ -70,9 +70,9 @@ class ForumController extends Controller
     {
         $forum = Forum::findOrFail($id);
         if ($forum->user_id != Auth::id()) {
-            return redirect()->route('forums.show', $id);
+            return redirect()->route('forum.show', $id);
         }
-        return view('forums.edit', compact('forum'));
+        return view('forum.edit', compact('forum'));
     }
 
     /**
@@ -86,13 +86,13 @@ class ForumController extends Controller
     {
         $forum = Forum::findOrFail($id);
         if ($forum->user_id != Auth::id()) {
-            return redirect()->route('forums.show', $id);
+            return redirect()->route('forum.show', $id);
         }
         $forum->forum_title = $request->forum_title;
         $forum->forum_desc = $request->forum_desc;
         $forum->save();
 
-        return redirect()->route('forums.show', $id);
+        return redirect()->route('forum.show', $id);
     }
 
     /**
@@ -105,11 +105,11 @@ class ForumController extends Controller
     {
         $forum = Forum::findOrFail($id);
         if ($forum->user_id != Auth::id()) {
-            return redirect()->route('forums.show', $id);
+            return redirect()->route('forum.show', $id);
         }
         $forum->delete();
 
-        return redirect()->route('forums.index');
+        return redirect()->route('forum.index');
     }
 
     /**
@@ -126,7 +126,7 @@ class ForumController extends Controller
         $discussion->message = $request->message;
         $discussion->save();
 
-        return redirect()->route('forums.show', $id);
+        return redirect()->route('forum.show', $id);
     }
 
     /**
@@ -139,11 +139,11 @@ class ForumController extends Controller
     {
         $discussion = ForumDiscussion::findOrFail($id);
         if ($discussion->user_id != Auth::id()) {
-            return redirect()->route('forums.show', $discussion->forum_id);
+            return redirect()->route('forum.show', $discussion->forum_id);
         }
         $discussion->message = '[deleted]';
         $discussion->save();
 
-        return redirect()->route('forums.show', $discussion->forum_id);
+        return redirect()->route('forum.show', $discussion->forum_id);
     }
 }

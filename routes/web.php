@@ -15,6 +15,7 @@ use App\Http\Controllers\Landing\CheckoutController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\NotificationDatabaseController;
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\ForumController;
 use App\Http\Controllers\Member\VideoController as MemberVideoController;
 use App\Http\Controllers\Member\CourseController as MemberCourseController;
 use App\Http\Controllers\Member\ReviewController as MemberReviewController;
@@ -136,6 +137,18 @@ Route::group(['as' => 'member.', 'prefix' => 'account', 'middleware' => ['auth',
 
 
 // forum route
+Route::group(['as' => 'forum.', 'prefix' =>'forum', 'middleware' => ['auth']], function(){
+    Route::get('/', [ForumController::class, 'index'])->name('index');
+    Route::get('/create', [ForumController::class, 'create'])->name('create');
+    Route::post('/', [ForumController::class, 'store'])->name('store');
+    Route::get('/{id}', [ForumController::class, 'show'])->name('show');
+    Route::get('/{id}/edit', [ForumController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [ForumController::class, 'update'])->name('update');
+    Route::delete('/{id}', [ForumController::class, 'destroy'])->name('destroy');
+    Route::post('/{id}/discussions', [ForumController::class, 'storeDiscussion'])->name('storeDiscussion');
+    Route::delete('/discussions/{id}', [ForumController::class, 'destroyDiscussion'])->name('destroyDiscussion');
+});
+
 // Route::group(['as' => 'forum.', 'prefix' =>'forum', 'middleware' => ['auth']], function(){
 //     Route::get('/', [ForumController::class, 'index'])->name('index');
 //     Route::get('/create', [ForumController::class, 'create'])->name('create');
