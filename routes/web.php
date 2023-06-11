@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Landing\CheckoutController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\NotificationDatabaseController;
+use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\Member\VideoController as MemberVideoController;
 use App\Http\Controllers\Member\CourseController as MemberCourseController;
 use App\Http\Controllers\Member\ReviewController as MemberReviewController;
@@ -37,6 +38,7 @@ use App\Http\Controllers\Member\TransactionController as MemberTransactionContro
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/certificate/{userId}/{courseId}',[CertificateController::class, 'generateCertificate']);
 
 // home route
 Route::get('/', HomeController::class)->name('home');
