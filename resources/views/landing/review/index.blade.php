@@ -1,10 +1,10 @@
-@extends('layouts.frontend.app', ['title' => 'Review'])
+@extends('layouts.frontend.app', ['title' => 'Forum'])
 
 @section('content')
     <!-- hero section -->
-    <x-landing.hero-section title="Review" subtitle="Kumpulan review dari para member yang sudah membeli premium disini"
+    <x-landing.hero-section title="Forum" subtitle="Kumpulan review dari para member yang sudah membeli premium disini"
         details="Disini review yang diberikan kami tampilkan secara menyeluruh tanpa adanya perubahan review agar kami semakin baik dalam menyajikan konten - konten premium maupun gratis."
-        :data="$reviews" cardtitle="Review">
+        :data="$reviews" cardtitle="Topic">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-2 w-10 h-10 md:w-20 md:h-20"
             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#235f5f" fill="none"
             stroke-linecap="round" stroke-linejoin="round">
@@ -21,7 +21,7 @@
     <div class="w-full bg-white p-3 border border-line border-gray-100">
         <div class="container mx-auto">
             <div class="flex flex-row overflow-x-auto md:grid md:grid-cols-3 gap-4 items-start">
-                @foreach ($reviews as $review)
+                {{-- @foreach ($reviews as $review)
                     <div class="min-w-full bg-slate-800 rounded-lg border border-slate-600">
                         <div class="flex justify-between p-4">
                             <div class="flex space-x-4">
@@ -77,7 +77,39 @@
                             </a>
                         </div>
                     </div>
-                @endforeach
+                @endforeach --}}
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-medium">Forums</h2>
+                    <a href="{{ route('forum.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create Forum</a>
+                </div>
+            
+                <div class="bg-white shadow-md rounded my-6">
+                    <table class="text-left w-full border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Title</th>
+                                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Description</th>
+                                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($forums as $forum)
+                                <tr class="hover:bg-grey-lighter">
+                                    <td class="py-4 px-6 border-b border-grey-light">{{ $forum->title }}</td>
+                                    <td class="py-4 px-6 border-b border-grey-light">{{ $forum->description }}</td>
+                                    <td class="py-4 px-6 border-b border-grey-light">
+                                        <a href="{{ route('forum.edit', $forum->id) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">Edit</a>
+                                        <form action="{{ route('forum.destroy', $forum->id) }}" method="POST" class="inline-block">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-red hover:bg-red-dark">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

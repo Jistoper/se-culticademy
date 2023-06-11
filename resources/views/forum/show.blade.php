@@ -1,4 +1,4 @@
-@extends('layouts.backend.app', ['title' => $forum->forum_title])
+@extends('layouts.frontend.app', ['title' => $forum->forum_title])
 
 @section('content')
     <div class="flex items-center justify-between mb-6">
