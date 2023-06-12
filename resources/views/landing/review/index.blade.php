@@ -1,10 +1,10 @@
-@extends('layouts.frontend.app', ['title' => 'Forum'])
+@extends('layouts.frontend.app', ['title' => 'Review'])
 
 @section('content')
     <!-- hero section -->
-    <x-landing.hero-section title="Forum" subtitle="Kumpulan review dari para member yang sudah membeli premium disini"
+    <x-landing.hero-section title="Review" subtitle="Kumpulan review dari para member yang sudah membeli premium disini"
         details="Disini review yang diberikan kami tampilkan secara menyeluruh tanpa adanya perubahan review agar kami semakin baik dalam menyajikan konten - konten premium maupun gratis."
-        :data="$reviews" cardtitle="Topic">
+        :data="$reviews" cardtitle="Review">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-2 w-10 h-10 md:w-20 md:h-20"
             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#235f5f" fill="none"
             stroke-linecap="round" stroke-linejoin="round">
