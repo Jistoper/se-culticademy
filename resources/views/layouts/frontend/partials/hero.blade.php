@@ -12,7 +12,7 @@
                     Selamat Datang di Culticademy
                 </p> --}}
                 <p class="text-sm md:text-lg text-center md:text-start text-white">
-                    Lorem ipsum dolor sit amet. Ut consequatur quibusdam et dignissimos Quis eum voluptas rerum sed omnis nemo. Non excepturi doloremque aut cupiditate tempora aut voluptates dolor! Rem voluptatem reprehenderit ut quia nihil qui voluptate rerum est placeat modi in sapiente perferendis. Aut beatae voluptates sed eligendi omnis est galisum fugit ea totam vitae ad porro ducimus.
+                    Persiapkan dirimu untuk meraih sukses di dunia pertanian dengan belajar dari para ahli dan praktisi di bidangnya. Culticademy hadir untuk membantu kamu meningkatkan skill dan pengetahuan di bidang pertanian melalui kursus online yang mudah diakses dari mana saja. Dapatkan pelajaran mengenai teknik bercocok tanam, manajemen pertanian, dan penggunaan teknologi modern dalam pertanian. Kembangkan potensi pertanian dan perbaiki kualitas hidup petani Indonesia bersama Culticademy. Persiapkan dirimu dari sekarang dan tingkatkan skillmu dalam bidang pertanian sekarang juga!
                 </p>
                 <div class="flex flex-row gap-4 items-center justify-center md:justify-start">
                     <a href="{{ route('course.index') }}"
