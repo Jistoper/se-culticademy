@@ -4,7 +4,7 @@
     <div class="max-w-7xl-auto py-6 sm:px-6 lg:px-8 bg-culti-green-4 items-center">
         <div class="sm:container sm:mx-auto px-6 rounded flex items-center justify-between mb-2">
             <div class="flex items-center space-x-2">
-                <img width="38" height="38" src="https://img.icons8.com/sf-regular/48/FFFFFF/chat.png" alt="chat"/>
+                <img width="34" height="34" src="https://img.icons8.com/sf-regular/48/FFFFFF/chat.png" alt="chat"/>
                 <h2 class="text-2xl font-semibold text-white">{{ $forum->forum_title }}</h2>
             </div>
             @if (Auth::check() && Auth::id() == $forum->user_id)
