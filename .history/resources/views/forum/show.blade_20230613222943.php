@@ -19,6 +19,7 @@
 
     <div class="bg-gray-100">
         <div class="p-4 sm:container sm:mx-auto px-6 rounded items-center mb-2">
+            <h3 class="text-lg font-medium mb-4">Discussions</h3>
             @if (Auth::check())
                 <form action="{{ route('forum.storeDiscussion', $forum->id) }}" method="POST" class="mb-4">
                     @csrf
@@ -47,12 +48,11 @@
                     </div>
                 </form>
             @endif
-            <h3 class="text-lg font-semibold text-gray-800 mb-1">Discussions</h3>
-            <hr class="h-px my-2 md-3 bg-gray-300 border-none">
+            <hr class="h-px my-3 md-3 bg-gray-300 border-none">
             @if ($discussions->count() > 0)
                 <ul>
                     @foreach ($discussions as $discussion)
-                        <li class="mb-1 px-2">
+                        <li class="mb-1">
                             <div class="items-center">
                                 <div class="flex items-center justify-between mb-2">
                                     <div class="flex items-center space-x-1">

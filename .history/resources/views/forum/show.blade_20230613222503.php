@@ -19,6 +19,7 @@
 
     <div class="bg-gray-100">
         <div class="p-4 sm:container sm:mx-auto px-6 rounded items-center mb-2">
+            <h3 class="text-lg font-medium mb-4">Discussions</h3>
             @if (Auth::check())
                 <form action="{{ route('forum.storeDiscussion', $forum->id) }}" method="POST" class="mb-4">
                     @csrf
@@ -47,27 +48,26 @@
                     </div>
                 </form>
             @endif
-            <h3 class="text-lg font-semibold text-gray-800 mb-1">Discussions</h3>
-            <hr class="h-px my-2 md-3 bg-gray-300 border-none">
+            <hr class="h-px my-3 md-3 bg-gray-300 border-none">
             @if ($discussions->count() > 0)
                 <ul>
                     @foreach ($discussions as $discussion)
-                        <li class="mb-1 px-2">
+                        <li class="mb-4">
                             <div class="items-center">
-                                <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center justify-between mb-1">
                                     <div class="flex items-center space-x-1">
                                         <img class="w-5 h-5 rounded-full" src="{{ $discussion->user->avatar }}" alt="{{ $discussion->user->name }}">
                                         <div class="text-sm text-gray-700">{{ $discussion->user->name }}</div>
                                     </div>
-                                    <div class="text-sm text-gray-600">{{ $discussion->created_at->diffForHumans() }}</div>
+                                    <div class="text-gray-600">{{ $discussion->created_at->diffForHumans() }}</div>
                                 </div>
-                                <div class="pl-4">
+                                <div class="pl-6">
                                     <div class="text-gray-700">{{ $discussion->message }}</div>
                                     @if (Auth::check() && Auth::id() == $discussion->user_id)
-                                        <form action="{{ route('forum.destroyDiscussion', $discussion->id) }}" method="POST">
+                                        <form action="{{ route('forum.destroyDiscussion', $discussion->id) }}" method="POST" class="inline-block">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="text-gray-600 hover:underline font-bold rounded text-xs bg-red hover:bg-red-dark">Delete</button>
+                                            <button type="submit" class="text-gray-600 font-bold py-1 px-3 rounded text-xs bg-red hover:bg-red-dark">Delete</button>
                                         </form>
                                     @endif
                                 </div>

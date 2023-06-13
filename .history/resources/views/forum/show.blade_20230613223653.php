@@ -52,7 +52,7 @@
             @if ($discussions->count() > 0)
                 <ul>
                     @foreach ($discussions as $discussion)
-                        <li class="mb-1 px-2">
+                        <li class="mb-1">
                             <div class="items-center">
                                 <div class="flex items-center justify-between mb-2">
                                     <div class="flex items-center space-x-1">

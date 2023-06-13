@@ -47,12 +47,12 @@
                     </div>
                 </form>
             @endif
-            <h3 class="text-lg font-semibold text-gray-800 mb-1">Discussions</h3>
-            <hr class="h-px my-2 md-3 bg-gray-300 border-none">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Discussions</h3>
+            <hr class="h-px my-3 md-3 bg-gray-300 border-none">
             @if ($discussions->count() > 0)
                 <ul>
                     @foreach ($discussions as $discussion)
-                        <li class="mb-1 px-2">
+                        <li class="mb-1">
                             <div class="items-center">
                                 <div class="flex items-center justify-between mb-2">
                                     <div class="flex items-center space-x-1">
