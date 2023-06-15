@@ -67,13 +67,6 @@
             })
         }
     </script>
-    <script>
-        function getContent() {
-            var editor = document.getElementById('editor');
-            var htmlContent = quill.root.innerHTML;
-            console.log(htmlContent);
-        }
-    </script>
     @stack('js')
 </body>
 

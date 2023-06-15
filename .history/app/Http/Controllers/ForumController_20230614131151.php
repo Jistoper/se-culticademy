@@ -27,7 +27,7 @@ class ForumController extends Controller
 
         // }])->search('forum_title')->latest()->get();
         // $forums = Forum::all()->search('forum_title');
-        $forums = Forum::all();
+        $forums = Forum::all()->paginate(3);
         return view('forum.index', compact('forums'));
     }
 

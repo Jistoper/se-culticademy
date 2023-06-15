@@ -27,10 +27,17 @@
                         </svg>
                         <span class="text-culti-green-3 font-bold">Lihat Course</span>
                     </a>
-                    <a href="{{ route('forum.index') }}"
+                    <a href="{{ route('showcase') }}"
                         class="px-4 py-2 rounded-lg bg-culti-green-3 text-white hover:scale-105 hover:duration-200 flex items-center gap-2 text-sm border border-culti-green-3">
-                        <img width="20" height="20" src="https://img.icons8.com/sf-regular/48/FFFFFF/chat.png" alt="chat"/>
-                        <span class="font-bold">Lihat Forum</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-source-code w-5 h-5"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M14.5 4h2.5a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-10a3 3 0 0 1 -3 -3v-5"></path>
+                            <path d="M6 5l-2 2l2 2"></path>
+                            <path d="M10 9l2 -2l-2 -2"></path>
+                        </svg>
+                        <span class="font-bold">Lihat Showcase</span>
                     </a>
                 </div>
             </div>

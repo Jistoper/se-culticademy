@@ -425,7 +425,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="{{ route('forum.index') }}"
+                            <a href="{{ route('forum') }}"
                                 class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500 {{ activeNav('review') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-message-2 w-5 h-5" width="24"

@@ -30,7 +30,7 @@
                                     {{ $forum->forum_title }}
                                 </a>
                             </div>
-                            <div class="flex items-center space-x-1 text-white text-xs">
+                            <div class="flex items-center space-x-2 text-white text-xs">
                                 <img src="{{ $forum->user->avatar }}" alt=""
                                     class="object-cover w-5 h-5 rounded-full border">
                                 <span>

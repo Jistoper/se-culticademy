@@ -68,6 +68,11 @@
         }
     </script>
     <script>
+        var quill = new Quill('#message', {
+            theme: 'summer'
+        });
+    </script>
+    <script>
         function getContent() {
             var editor = document.getElementById('editor');
             var htmlContent = quill.root.innerHTML;

@@ -148,3 +148,9 @@ Route::group(['as' => 'forum.', 'prefix' =>'forum', 'middleware' => ['auth']], f
     Route::post('/{id}/discussions', [ForumController::class, 'storeDiscussion'])->name('storeDiscussion');
     Route::delete('/discussions/{id}', [ForumController::class, 'destroyDiscussion'])->name('destroyDiscussion');
 });
+
+// forum search
+Route::controller(ForumController::class)->group(function(){
+    Route::get('/forum', 'index')->name('forum.index');
+    Route::post('/forum/{course}', 'store')->name('forum');
+});

@@ -147,4 +147,11 @@ Route::group(['as' => 'forum.', 'prefix' =>'forum', 'middleware' => ['auth']], f
     Route::delete('/{id}', [ForumController::class, 'destroy'])->name('destroy');
     Route::post('/{id}/discussions', [ForumController::class, 'storeDiscussion'])->name('storeDiscussion');
     Route::delete('/discussions/{id}', [ForumController::class, 'destroyDiscussion'])->name('destroyDiscussion');
+    Route::get('/forum', [ForumController::class, 'search'])->name('forum.search');
+});
+
+// forum search
+Route::controller(ForumController::class)->group(function(){
+    Route::get('/forum', 'search')->name('forum.search');
+    Route::post('/forum/{forums}', 'store')->name('forum');
 });

@@ -29,7 +29,7 @@
                     </a>
                     <a href="{{ route('forum.index') }}"
                         class="px-4 py-2 rounded-lg bg-culti-green-3 text-white hover:scale-105 hover:duration-200 flex items-center gap-2 text-sm border border-culti-green-3">
-                        <img width="20" height="20" src="https://img.icons8.com/sf-regular/48/FFFFFF/chat.png" alt="chat"/>
+                        <img width="28" height="28" src="https://img.icons8.com/sf-regular/48/FFFFFF/chat.png" alt="chat"/>
                         <span class="font-bold">Lihat Forum</span>
                     </a>
                 </div>

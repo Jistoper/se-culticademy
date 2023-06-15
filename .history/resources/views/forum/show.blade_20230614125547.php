@@ -26,7 +26,7 @@
                         <label class="block text-gray-700 mb-2" for="message">
                             Message
                         </label>
-                        <textarea name="message" id="message" rows="5" class="form-control w-full p-2 border border-gray-400 rounded" placeholder="Type message here..."></textarea>
+                        <textarea name="message" id="message" rows="5" class="form-control content-section"></textarea>
                     </div>
                     <div class="flex items-center justify-end">
                         <button class="flex items-center space-x-1 bg-slate-800 hover:bg-slate-700 text-white font-semibold py-2 px-4 rounded" onclick="getContent()" type="submit">
@@ -57,7 +57,7 @@
                                 <div class="flex items-center justify-between mb-2">
                                     <div class="flex items-center space-x-1">
                                         <img class="w-5 h-5 rounded-full" src="{{ $discussion->user->avatar }}" alt="{{ $discussion->user->name }}">
-                                        <div class="text-sm font-bold text-gray-700">{{ $discussion->user->name }}</div>
+                                        <div class="text-sm font-semibold text-gray-700">{{ $discussion->user->name }}</div>
                                     </div>
                                     <div class="text-sm text-gray-600">{{ $discussion->created_at->diffForHumans() }}</div>
                                 </div>

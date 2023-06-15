@@ -11,8 +11,6 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet" />
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
 </head>
 
 <body style="font-family: 'Open Sans', sans-serif;">
@@ -65,13 +63,6 @@
                     )
                 }
             })
-        }
-    </script>
-    <script>
-        function getContent() {
-            var editor = document.getElementById('editor');
-            var htmlContent = quill.root.innerHTML;
-            console.log(htmlContent);
         }
     </script>
     @stack('js')

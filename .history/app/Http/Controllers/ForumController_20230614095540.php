@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Forum;
 use Illuminate\Http\Request;
+use App\Models\Forum;
 use App\Models\ForumDiscussion;
-use Illuminate\Support\HtmlString;
 use Illuminate\Support\Facades\Auth;
 
 class ForumController extends Controller
@@ -131,16 +130,10 @@ class ForumController extends Controller
      */
     public function storeDiscussion(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'message' => 'required',
-        ]);
-
-        $messageWithLineBreaks = nl2br($validatedData['message']);
-
         $discussion = new ForumDiscussion;
         $discussion->forum_id = $id;
         $discussion->user_id = Auth::id();
-        $discussion->message = new HtmlString($messageWithLineBreaks);
+        $discussion->message = $request->message;
         $discussion->save();
 
         return redirect()->route('forum.show', $id);

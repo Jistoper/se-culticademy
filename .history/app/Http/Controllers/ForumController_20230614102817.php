@@ -140,7 +140,7 @@ class ForumController extends Controller
         $discussion = new ForumDiscussion;
         $discussion->forum_id = $id;
         $discussion->user_id = Auth::id();
-        $discussion->message = new HtmlString($messageWithLineBreaks);
+        $discussion->message = new HtmlString($validatedData['message']);
         $discussion->save();
 
         return redirect()->route('forum.show', $id);

@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Forum;
 use Illuminate\Http\Request;
+use App\Models\Forum;
 use App\Models\ForumDiscussion;
-use Illuminate\Support\HtmlString;
 use Illuminate\Support\Facades\Auth;
 
 class ForumController extends Controller
@@ -17,16 +16,6 @@ class ForumController extends Controller
      */
     public function index()
     {
-        // $courses = Course::withCount(['videos', 'reviews', 'details as enrolled' => function($query){
-        //     $query->whereHas('transaction', function($query){
-        //         $query->where('status', 'success');
-        //     });
-        // }])->search('name')->latest()->get();
-
-        // $forums = Forum::withCount([{
-
-        // }])->search('forum_title')->latest()->get();
-        // $forums = Forum::all()->search('forum_title');
         $forums = Forum::all();
         return view('forum.index', compact('forums'));
     }
@@ -131,16 +120,10 @@ class ForumController extends Controller
      */
     public function storeDiscussion(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'message' => 'required',
-        ]);
-
-        $messageWithLineBreaks = nl2br($validatedData['message']);
-
         $discussion = new ForumDiscussion;
         $discussion->forum_id = $id;
         $discussion->user_id = Auth::id();
-        $discussion->message = new HtmlString($messageWithLineBreaks);
+        $discussion->message = $request->message;
         $discussion->save();
 
         return redirect()->route('forum.show', $id);
@@ -162,5 +145,14 @@ class ForumController extends Controller
         $discussion->save();
 
         return redirect()->route('forum.show', $discussion->forum_id);
+    }
+
+    public function search(Request $request)
+    {
+        $forums = Forum::search('forum_title')
+            ->multiSearch('user', 'name')->latest()->get();
+
+        // passing variabel $forums kedalam view.
+        return view('forum.index', compact('forums'));
     }
 }
