@@ -56,17 +56,9 @@
                             <div class="items-center">
                                 <div class="flex items-center justify-between mb-2">
                                     <div class="flex items-center space-x-1">
-                                        <img class="w-6 h-6 rounded-full" src="{{ $discussion->user->avatar }}" alt="{{ $discussion->user->name }}">
-                                        <div class="text-md font-bold text-gray-700">{{ $discussion->user->name }}</div>
-                                        <div class="text-sm font-semibold text-gray-500"> - 
-                                            @if (!empty($discussion->user->roles))
-                                                @php
-                                                    $name = $discussion->user->roles[0]['name'];
-                                                @endphp
-                                            
-                                                {{ $name }}
-                                            @endif
-                                        </div>
+                                        <img class="w-5 h-5 rounded-full" src="{{ $discussion->user->avatar }}" alt="{{ $discussion->user->name }}">
+                                        <div class="text-sm font-bold text-gray-700">{{ $discussion->user->name }}</div>
+                                        <div class="text-sm font-semibold text-gray-500">{{ $discussion->user->roles->name }}</div>
                                     </div>
                                     <div class="text-sm text-gray-600">{{ $discussion->created_at->diffForHumans() }}</div>
                                 </div>

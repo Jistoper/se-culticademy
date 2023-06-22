@@ -3,9 +3,9 @@
 @section('content')
     <div class="w-full p-6 md:p-12 bg-gray-100 h-full">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col items-center justify-center gap-y-4 md:gap-y-4 text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 400" width="450" height="450">
-                    <rect width="400" height="400" fill="#f3f4f6" class="colorfff svgShape"></rect>
+            <div class="flex flex-col items-center justify-center gap-y-4 md:gap-y-8 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 450 450" viewBox="0 0 450 450" width="500" height="500">
+                    <rect width="450" height="450" fill="#f3f4f6" class="colorfff svgShape"></rect>
                     <path fill="#f7fafc" d="M103.9,430.5c0,0-41.6-19.3-48.7-66.4c-7.1-47.1,11.9-64.7,17.9-76.7c6-12,8.8-26.7,1.8-51.8 c-7.1-25.1,4.2-92.5,75.7-107.7c71.5-15.1,178.3,0,178.3,0s77.1,7.3,84.4,65.1c7.3,57.8-7.1,92.4-7.1,92.4s38.9,29.1,48.6,58.1 s-17.9,81.4-58.1,91.3L103.9,430.5z" class="colorf7fafc svgShape"></path><rect width="79.1" height="152.6" x="111" y="102.7" fill="#ffffff" stroke="#d2e5ef" stroke-miterlimit="10" stroke-width=".664" transform="rotate(-16.69 150.561 179.009)" class="colorfff svgShape colorStroked2e5ef svgStroke"></rect><rect width="67.8" height="141.3" x="116.6" y="108.3" fill="#d2e5ef" transform="rotate(-16.69 150.561 179.009)" class="colord2e5ef svgShape"></rect><path fill="#ffffff" d="M103.2 119.4c.9 3-.8 6.1-3.8 7-3 .9-6.1-.8-7-3.8-.9-3 .8-6.1 3.8-7C99.1 114.8 102.3 116.4 103.2 119.4zM168.1 100c.9 3-.8 6.1-3.8 7-3 .9-6.1-.8-7-3.8-.9-3 .8-6.1 3.8-7C164.1 95.3 167.3 97 168.1 100zM143.8 254.8c.9 3-.8 6.1-3.8 7-3 .9-6.1-.8-7-3.8-.9-3 .8-6.1 3.8-7C139.7 250.1 142.9 251.8 143.8 254.8zM208.7 235.3c.9 3-.8 6.1-3.8 7-3 .9-6.1-.8-7-3.8-.9-3 .8-6.1 3.8-7C204.7 230.6 207.8 232.3 208.7 235.3z" class="colorfff svgShape"></path><path fill="#f7fafc" d="M167.4,172.8c2.5,8.4,1.7,16-12.2,20.2c-13.9,4.2-19.6-1.5-22.1-9.9c-2.5-8.4-0.9-16.3,13-20.4 C160,158.5,164.9,164.4,167.4,172.8z" class="colorf7fafc svgShape"></path>
                             <rect width="5.1" height="19.6" x="114.5" y="126.8" fill="#b3d2e0" transform="rotate(-16.69 117.052 136.585)" class="colorb3d2e0 svgShape"></rect><rect width="5.1" height="19.6" x="143.2" y="222.7" fill="#b3d2e0" transform="rotate(-16.69 145.819 232.505)" class="colorb3d2e0 svgShape"></rect><rect width="5.1" height="13.9" x="186.9" y="212.4" fill="#ffffff" transform="rotate(-16.69 189.5 219.4)" class="colorfff svgShape"></rect><path fill="#d2e5ef" d="M141.9,173l3.2,0.4c-0.6,1.7-0.7,4-0.1,5.9c0.7,2.2,1.7,2.9,2.7,2.6c3.1-0.9-1.9-9.8,4.2-11.6 c2.8-0.8,5.8,0.7,7.2,5.4c0.6,2.1,0.8,4.3,0.3,6.1l-3.2-0.3c0.4-1.8,0.4-3.5-0.1-4.9c-0.7-2.2-1.8-2.9-2.8-2.6
                                     c-3,0.9,1.9,9.8-4.1,11.6c-2.7,0.8-5.8-0.7-7.2-5.4C141.2,177.6,141.2,174.8,141.9,173z" class="colord2e5ef svgShape"></path><rect width="3" height="22.4" x="149.1" y="166.6" fill="#d2e5ef" transform="rotate(73.31 150.539 177.825)" class="colord2e5ef svgShape"></rect><g fill="#000000" class="color000 svgShape"><rect width="79.1" height="152.6" x="88.4" y="140.8" fill="#ffffff" stroke="#d2e5ef" stroke-miterlimit="10" stroke-width=".664" transform="rotate(-39.177 127.992 217.077)" class="colorfff svgShape colorStroked2e5ef svgStroke"></rect><rect width="67.8" height="141.3" x="94.1" y="146.4" fill="#d2e5ef" transform="rotate(-39.177 127.992 217.077)" class="colord2e5ef svgShape"></rect><path fill="#ffffff" d="M61.5 180.2c2 2.4 1.6 6-.8 8-2.4 2-6 1.6-8-.8-2-2.4-1.6-6 .8-8C55.9 177.4 59.5 177.7 61.5 180.2zM114.1 137.3c2 2.4 1.6 6-.8 8-2.4 2-6 1.6-8-.8-2-2.4-1.6-6 .8-8C108.5 134.5 112.1 134.9 114.1 137.3zM150.7 289.7c2 2.4 1.6 6-.8 8-2.4 2-6 1.6-8-.8-2-2.4-1.6-6 .8-8C145.2 286.9 148.8 287.3 150.7 289.7zM203.3 246.9c2 2.4 1.6 6-.8 8-2.4 2-6 1.6-8-.8-2-2.4-1.6-6 .8-8C197.8 244.1 201.3 244.4 203.3 246.9z" class="colorfff svgShape"></path><path fill="#f7fafc" d="M141.2,204.9c5.5,6.8,7.7,14.2-3.6,23.3c-11.3,9.2-18.7,6.1-24.2-0.7c-5.5-6.8-7.1-14.7,4.2-23.8
@@ -66,51 +66,49 @@
                         c0,0-2,0.6-3.2-2.6V192.6z" class="colorff90c8 svgShape"></path><path fill="none" stroke="#e26060" stroke-linecap="round" stroke-miterlimit="10" stroke-width=".657" d="M308.8 166.3c0 0 6.9 7.2 12.6 8.7M305.8 170.7c0 0 5.5 6.8 11.8 9.2M304.9 176c0 0 5.3 6.2 8.8 6.8M311.9 163.5c0 0 7.5 6.7 12.8 8.2" class="colorStrokee26060 svgStroke"></path><line x1="320.8" x2="320.8" y1="169.8" y2="165.7" fill="none" stroke="#e26060" stroke-linecap="round" stroke-miterlimit="10" stroke-width=".657" class="colorStrokee26060 svgStroke"></line><line x1="352.2" x2="336.3" y1="212.3" y2="185.6" fill="none" stroke="#e26060" stroke-linecap="round" stroke-miterlimit="10" stroke-width=".657" class="colorStrokee26060 svgStroke"></line><path fill="none" stroke="#e26060" stroke-linecap="round" stroke-miterlimit="10" stroke-width=".657" d="M303.8,179c0,0,5.7,9.2,9.5,10.7l18.1,33.6" class="colorStrokee26060 svgStroke"></path><line x1="313.7" x2="315.5" y1="225.8" y2="193.9" fill="none" stroke="#e26060" stroke-linecap="round" stroke-miterlimit="10" stroke-width=".657" class="colorStrokee26060 svgStroke"></line><polyline fill="none" stroke="#e26060" stroke-linecap="round" stroke-miterlimit="10" stroke-width=".657" points="293.8 176.3 299 171.6 301 169.3"></polyline><line x1="295" x2="300.1" y1="181.8" y2="175.6" fill="none" stroke="#e26060" stroke-linecap="round" stroke-miterlimit="10" stroke-width=".657" class="colorStrokee26060 svgStroke"></line><line x1="292.9" x2="298.8" y1="170.7" y2="165.7" fill="none" stroke="#e26060" stroke-linecap="round" stroke-miterlimit="10" stroke-width=".657" class="colorStrokee26060 svgStroke"></line><line x1="292.4" x2="299.5" y1="165.7" y2="158.1" fill="none" stroke="#e26060" stroke-linecap="round" stroke-miterlimit="10" stroke-width=".657" class="colorStrokee26060 svgStroke"></line><path fill="#7a164d" d="M313.3,154.7c0-1.3-1-2.3-2.3-2.3c-1.3,0-2.3,1-2.3,2.3c0,1.3,1,2.3,2.3,2.3
                         C312.3,157,313.3,156,313.3,154.7z" opacity=".44" class="color7a164d svgShape"></path><path fill="none" stroke="#ce4590" stroke-linecap="round" stroke-miterlimit="10" stroke-width=".985" d="M414.3,202.7c0,0-10.1,12.9-26.5,25.4c0,0-5.5-1.3-4.4-9.6c0,0-6.1,0.9-7.1-6.1c0,0-6.5-1.7-5.2-9.1
                         c0,0-5.1-1.1-5-5l28.9-17.7" class="colorStrokece4590 svgStroke"></path><path fill="none" stroke="#396099" stroke-linecap="round" stroke-miterlimit="10" stroke-width=".985" d="M365.6 404.8c1.9-38.1 11.7-102.9 11.7-102.9M343.1 404.8c0 0 18.9 1.1 22.5 0" class="colorStroke396099 svgStroke"></path><line x1="440.6" x2="457.5" y1="387.5" y2="373.5" fill="none" stroke="#396099" stroke-linecap="round" stroke-miterlimit="10" stroke-width=".985" class="colorStroke396099 svgStroke"></line></g><g fill="#000000" class="color000 svgShape"><path fill="#e05353" d="M87.5 355.6c0 0-.4-16 3.8-16 4.1 0-1.4 24.4-1.4 24.4L87.5 355.6zM90.8 367.6c0 0-8.7-14.8-13.7-11.7-5 3.1 16.2 22 16.2 22L90.8 367.6zM83.6 344.1c0 0-8.6-12.7-13.2-8.1-4.6 4.5 10.2 12.1 14.3 11.1L83.6 344.1zM80 335c0 0-2.6-14.8 1.4-14.9 4-.1 2.4 13-.3 17.5L80 335zM72.1 319.3c0 0 5.7-12.2 2.2-16C71.3 300.2 68.5 314.3 72.1 319.3zM75.4 325.3c0 0-9.4-9.9-13-5.2C58.9 324.8 69 327.8 75.4 325.3zM64.3 308.6c0 0-10.3-3.2-10.2 2.6.1 5.8 12.4 0 12.4 0L64.3 308.6zM64.3 308.6c0 0 3.1-10.5.7-14C61.9 290 58.2 302.9 64.3 308.6z" class="colore05353 svgShape"></path><path fill="none" stroke="#a52828" stroke-miterlimit="10" stroke-width=".807" d="M60,304.6c0,0,23.4,15.1,36.4,89.2" class="colorStrokea52828 svgStroke"></path><path fill="#e05353" d="M61.3,305.6c0,0-4.1-10.3-9.7-8.9C46,298.1,55.7,308,61.3,305.6z" class="colore05353 svgShape"></path><g fill="#000000" class="color000 svgShape"><path fill="#e05353" d="M102.6 346.9c0 0 .4-16-3.8-16-4.1 0 1.4 24.4 1.4 24.4L102.6 346.9zM99.2 359c0 0 8.7-14.8 13.7-11.7 5 3.1-16.2 22-16.2 22L99.2 359zM106.4 335.4c0 0 8.6-12.7 13.2-8.1 4.6 4.5-10.2 12.1-14.3 11.1L106.4 335.4zM110 326.3c0 0 2.6-14.8-1.4-14.9-4-.1-2.4 13 .3 17.5L110 326.3zM117.9 310.6c0 0-5.7-12.2-2.2-16C118.8 291.5 121.5 305.6 117.9 310.6zM114.6 316.6c0 0 9.4-9.9 13-5.2C131.2 316.1 121 319.1 114.6 316.6zM125.7 299.9c0 0 10.3-3.2 10.2 2.6-.1 5.8-12.4 0-12.4 0L125.7 299.9zM125.7 299.9c0 0-3.1-10.5-.7-14C128.2 281.3 131.8 294.3 125.7 299.9z" class="colore05353 svgShape"></path><path fill="none" stroke="#a52828" stroke-miterlimit="10" stroke-width=".807" d="M130,295.9c0,0-23.4,15.1-36.4,89.2" class="colorStrokea52828 svgStroke"></path><path fill="#e05353" d="M128.7,296.9c0,0,4.1-10.3,9.7-8.9C144,289.4,134.3,299.3,128.7,296.9z" class="colore05353 svgShape"></path></g><polygon fill="#7a164d" points="82.1 431.1 110.1 431.1 118.4 389.9 74 389.9" class="color7a164d svgShape"></polygon><polygon fill="#964073" points="74.2 392.3 71.4 389.9 71.4 384.1 121.4 384.1 121.4 389.9 118.4 392.3" class="color964073 svgShape"></polygon></g><g fill="#000000" class="color000 svgShape"><circle cx="109.9" cy="115.1" r="24.8" fill="#e05353" class="colore05353 svgShape"></circle><polygon fill="#ffffff" points="121 126.5 98.9 126.5 103.5 103.7 116.3 103.7" class="colorfff svgShape"></polygon><path fill="none" stroke="#e05353" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.008" d="M113.7,106.4c0,2.1-1.7,3.7-3.7,3.7s-3.7-1.7-3.7-3.7" class="colorStrokee05353 svgStroke"></path></g></svg>
-                <h1 class="text-gray-700 font-semibold text-lg md:text-2xl mx-0 md:mx-80">
+                <h1 class="text-gray-100 font-semibold text-lg md:text-2xl mx-0 md:mx-80">
                     Pesanan anda telah kami konfirmasi, Terima kasih telah membeli course
                 </h1>
-                <div class="">
-                    <div class="bg-white rounded-lg shadow overflow-hidden">
-                        <table class="w-full">
-                            <tbody>
-                                <tr>
-                                    <th class="px-4 py-3 bg-culti-green-4 text-left text-gray-100">Invoice</th>
-                                    <td class="px-4 py-3">{{ $invoice->invoice }}</td>
-                                </tr>
-                                <tr>
-                                    <th class="px-4 py-3 bg-culti-green-4 text-left text-gray-100">User ID</th>
-                                    <td class="px-4 py-3">{{ $invoice->user_id }}</td>
-                                </tr>
-                                <tr>
-                                    <th class="px-4 py-3 bg-culti-green-4 text-left text-gray-100">Name</th>
-                                    <td class="px-4 py-3">{{ $invoice->name }}</td>
-                                </tr>
-                                <tr>
-                                    <th class="px-4 py-3 bg-culti-green-4 text-left text-gray-100">Grand Total</th>
-                                    <td class="px-4 py-3">{{ $invoice->grand_total }}</td>
-                                </tr>
-                                <tr>
-                                    <th class="px-4 py-3 bg-culti-green-4 text-left text-gray-100">Status</th>
-                                    <td class="px-4 py-3">{{ $invoice->status }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <button
-                        class="px-4 py-2 rounded-lg bg-white hover:bg-culti-green-4 text-culti-green-4 hover:text-white hover:scale-105 hover:duration-200 flex items-center gap-2 text-sm font-semibold border border-culti-green-4"
-                        id="pay-button">
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            class="icon icon-tabler icon-tabler-device-laptop w-5 h-5" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="1.4" stroke="currentColor"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <line x1="3" y1="19" x2="21" y2="19"></line>
-                            <rect x="5" y="6" width="14" height="10"
-                            rx="1"></rect>
-                            </svg>
-                        Cek Course
-                    </button>
+                <div class="bg-white rounded-lg shadow overflow-hidden">
+                    <table class="w-full">
+                        <tbody>
+                            <tr>
+                                <th class="px-4 py-3 bg-culti-green-4 text-left text-gray-100">Invoice</th>
+                                <td class="px-4 py-3">{{ $invoice->invoice }}</td>
+                            </tr>
+                            <tr>
+                                <th class="px-4 py-3 bg-culti-green-4 text-left text-gray-100">User ID</th>
+                                <td class="px-4 py-3">{{ $invoice->user_id }}</td>
+                            </tr>
+                            <tr>
+                                <th class="px-4 py-3 bg-culti-green-4 text-left text-gray-100">Name</th>
+                                <td class="px-4 py-3">{{ $invoice->name }}</td>
+                            </tr>
+                            <tr>
+                                <th class="px-4 py-3 bg-culti-green-4 text-left text-gray-100">Grand Total</th>
+                                <td class="px-4 py-3">{{ $invoice->grand_total }}</td>
+                            </tr>
+                            <tr>
+                                <th class="px-4 py-3 bg-culti-green-4 text-left text-gray-100">Status</th>
+                                <td class="px-4 py-3">{{ $invoice->status }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+                <button
+                    class="px-4 py-2 rounded-lg bg-white hover:bg-culti-green-4 text-culti-green-4 hover:text-white hover:scale-105 hover:duration-200 flex items-center gap-2 text-sm font-semibold border border-culti-green-4"
+                    id="pay-button">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-device-laptop w-5 h-5" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="1.4" stroke="currentColor"
+                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <line x1="3" y1="19" x2="21" y2="19"></line>
+                        <rect x="5" y="6" width="14" height="10"
+                        rx="1"></rect>
+                        </svg>
+                    Cek Course
+                </button>
             </div>
         </div>
     </div>

@@ -181,7 +181,7 @@
                 </div>
                 <div class="flex flex-row overflow-x-auto md:grid md:grid-cols-3 gap-4 items-start">
                     @foreach ($reviews as $review)
-                        <div class="min-w-full bg-slate-800 rounded-lg border border-slate-800">
+                        <div class="min-w-full bg-slate-800 rounded-lg border border-slate-600">
                             <div class="flex justify-between p-4">
                                 <div class="flex space-x-4">
                                     <div>
@@ -210,7 +210,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="p-4 space-y-2 text-sm rounded-b-lg bg-white text-gray-600 border-t border-line border-slate-800">
+                            <div class="p-4 space-y-2 text-sm text-gray-300 border-t border-line border-slate-800">
                                 <p class="text-justify">{{ $review->review }}</p>
                             </div>
                         </div>
