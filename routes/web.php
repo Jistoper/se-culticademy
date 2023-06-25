@@ -14,7 +14,6 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Landing\CheckoutController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\NotificationDatabaseController;
-use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\Member\VideoController as MemberVideoController;
 use App\Http\Controllers\Member\CourseController as MemberCourseController;
@@ -25,6 +24,7 @@ use App\Http\Controllers\Member\ProfileController as MemberProfileController;
 use App\Http\Controllers\Member\MyCourseController as MemberMyCourseController;
 use App\Http\Controllers\Member\ShowcaseController as MemberShowcaseController;
 use App\Http\Controllers\Landing\CategoryController as LandingCategoryController;
+use App\Http\Controllers\Landing\CertificateController;
 use App\Http\Controllers\Landing\ShowcaseController as LandingShowcaseController;
 use App\Http\Controllers\Member\DashboardController as MemberDashboardController;
 use App\Http\Controllers\Member\TransactionController as MemberTransactionController;
@@ -39,7 +39,6 @@ use App\Http\Controllers\Member\TransactionController as MemberTransactionContro
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/certificate/{userId}/{courseId}',[CertificateController::class, 'generateCertificate']);
 
 // home route
 Route::get('/', HomeController::class)->name('home');
@@ -48,7 +47,10 @@ Route::controller(LandingCourseController::class)->as('course.')->group(function
     Route::get('/course', 'index')->name('index');
     Route::get('/course/{course:slug}', 'show')->name('show');
     Route::get('/course/{course:slug}/{video:episode}', 'video')->name('video');
+    Route::post('/course/progress', 'postProgress')->name('postProgress');
+    Route::get('/course/progress/{course:id}', 'checkCourseProgress')->name('getProgress');
 });
+
 // category route
 Route::get('/category/{category:slug}', LandingCategoryController::class)->name('category');
 // review route
@@ -132,6 +134,12 @@ Route::group(['as' => 'member.', 'prefix' => 'account', 'middleware' => ['auth',
         Route::get('/profile', 'index')->name('index');
         Route::put('/profile/{user}', 'updateProfile')->name('update');
         Route::put('/profile/password/{user}', 'updatePassword')->name('password');
+    });
+    Route::controller(CertificateController::class)->as('certificate.')->group(function(){
+        // Route::get('/certificate/{userId}/{courseId}',[CertificateController::class, 'generateCertificate'])->name('generate');
+        // Route::put('/certificate/{userId}/{courseId}','generateCertificate')->name('generate');
+        Route::put('/certificate/{course:id}','generateCertificate')->name('generate');
+        Route::get('/certificate/{certificate:id}','downloadCertificate')->name('download');
     });
 });
 
