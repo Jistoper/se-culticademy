@@ -168,6 +168,40 @@
                                 </button>
                             </form>
                         @endif
+
+                        <form action="{{ route('course.postProgress') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="course_id" value="{{ $activeVideo->course_id }}">
+                            <input type="hidden" name="session_id" value="{{ $activeVideo->id }}">
+                            <input type="hidden" name="status" value="DONE">
+                            <button type="submit" class="px-4 py-2 rounded-lg bg-green-800 text-white flex items-center gap-2 text-sm border border-green-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-basket w-5 h-5" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <polyline points="7 10 12 4 17 10"></polyline>
+                                    <path d="M21 10l-2 8a2 2.5 0 0 1 -2 2h-10a2 2.5 0 0 1 -2 -2l-2 -8z"></path>
+                                    <circle cx="12" cy="15" r="2"></circle>
+                                </svg>
+                                Set done
+                            </button>
+
+                        </form>
+                        <form action="{{ route('course.postProgress') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="course_id" value="{{ $activeVideo->course_id }}">
+                            <input type="hidden" name="session_id" value="{{ $activeVideo->id }}">
+                            <input type="hidden" name="status" value="DONE">
+                            <button type="submit" class="px-4 py-2 rounded-lg bg-green-800 text-white flex items-center gap-2 text-sm border border-green-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-basket w-5 h-5" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <polyline points="7 10 12 4 17 10"></polyline>
+                                    <path d="M21 10l-2 8a2 2.5 0 0 1 -2 2h-10a2 2.5 0 0 1 -2 -2l-2 -8z"></path>
+                                    <circle cx="12" cy="15" r="2"></circle>
+                                </svg>
+                                Progress: {{ $progress }}
+                            </button>
+                        </form>
+                        {{-- <h1>{{ $activeVideo }}</h1> --}}
+                        {{-- <h1>{{ route('course.checkCourseProgress', [$course->id]) }} </h1> --}}
                     </div>
                 </div>
             </div>

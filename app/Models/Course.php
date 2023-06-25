@@ -54,4 +54,14 @@ class Course extends Model
     {
         return $this->hasMany(Review::class);
     }
+
+    public function progress()
+    {
+        return $this->hasMany(CourseProgression::class);
+    }
+
+    public function certificates()
+    {
+        return $this->hasMany(CourseCertification::class);
+    }
 }

@@ -7,7 +7,11 @@ use App\Models\Course;
 use App\Models\Review;
 use App\Models\Transaction;
 use App\Http\Controllers\Controller;
+use App\Models\CourseProgression;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Landing\CertificateController;
+use App\Models\CourseCertification;
 
 class CourseController extends Controller
 {
@@ -107,8 +111,78 @@ class CourseController extends Controller
             // kembali kehalaman sebelumnya dengan membawa toastr.
             return back()->with('toast_error', 'Episode ini hanya untuk member premium');
         }
+        // $videoID = $video->id;
+        $activeVideo = $video;
+
+        // View progress
+        $progress = $this->checkCourseProgress($course->id);
 
         // passing variabel $course, $video, $videos, $alreadyBought, $reviews, dan $avgRating kedalam view.
-        return view('landing.course.video', compact('course','video', 'videos', 'alreadyBought', 'reviews', 'avgRating'));
+        return view('landing.course.video', compact('course','video', 'videos', 'alreadyBought', 'reviews', 'avgRating', 'activeVideo', 'progress'));
     }
+
+    public function postProgress(Request $request)
+    {
+        // tampung data user yang sedang login kedalam variable $user.
+        $user = Auth::user();
+
+        // Get the course ID or session ID from the request, depending on your requirements
+        $courseId = $request->input('course_id');
+        $sessionId = $request->input('session_id');
+        $status = $request->input('status');
+        $userId = $user->id;
+
+        // Check if the row already exists
+        $existingProgression = CourseProgression::where('course_id', $courseId)
+            ->where('session_id', $sessionId)
+            ->first();
+
+        if ($existingProgression) {
+            // Row already exists, perform necessary actions or redirect with a message
+            return redirect()->back()->with('error', 'Course progression already exists.');
+        }
+
+        // Create a new course_progression record
+        $courseProgression = CourseProgression::create([
+            'course_id' => $courseId,
+            'session_id' => $sessionId,
+            'user_id' => $userId,
+            'status' => $status, // Assuming you want to set the status as 'done'
+        ]);
+
+        // If course progress is 100%
+        if ($this->checkCourseProgress($courseId) === 100) {
+            // Create Course Certification
+            $certificate = CourseCertification::create([
+                'course_id' => $courseId,
+                'user_id' => $userId,
+                'is_printed' => false,
+                'certificate_path' => null,
+            ]);
+            return redirect()->back()->with('success', 'Selamat, Semua Course telah terselesaikan.');
+        }
+        // Redirect back or to another page after inserting the course_progression record
+        return redirect()->back()->with('success', 'Progress dari Course telah disimpan.');
+    }
+
+    private function checkCourseProgress($courseId)
+    {
+         // tampung data user yang sedang login kedalam variable $user.
+         $user = Auth::user();
+         $userId = $user->id;
+
+        $countProgression = CourseProgression::where('course_id', $courseId)
+            ->where('user_id', $userId)
+            ->count();
+
+        $countAvailableCourse = Video::where('course_id', $courseId)
+            ->count();
+
+        if ($countProgression === $countAvailableCourse) {
+            return 100;
+        } else {
+            return round(($countProgression / $countAvailableCourse) * 100);
+        }
+    }
+
 }

@@ -9,6 +9,12 @@
       margin-right: auto;
       text-align: center;
     }
+    /* body {
+      background-image: url('{{ asset('utils/certificate-background.svg') }}');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    } */
   </style>
 </head>
 <body class="bg-cover bg-center bg-no-repeat flex items-center justify-center">

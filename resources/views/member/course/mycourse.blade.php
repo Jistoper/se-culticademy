@@ -27,9 +27,15 @@
                             <div class="col-md-3 mb-3">
                                 <img src="{{ $data->course->image }}" class="mr-3 shadow-custom w-100">
                             </div>
+
                             <div class="col-md-9 mb-3 text-dark">
                                 <h5 class="mt-2">{{ $data->course->name }}</h5>
                                 <!--mobile -->
+                                {{-- ADDING NEW BAR --}}
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{ $data->course->percentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $data->course->percentage }}%">{{ $data->course->percentage }}%</div>
+                                </div>
+                                {{-- END BAR --}}
                                 <div class="d-block d-md-none d-lg-none mt-3">
                                     <a href="{{ route('course.show', $data->course->slug) }}"
                                         class="btn shadow btn-dark btn-md mb-2 w-100">
@@ -78,6 +84,7 @@
                                 <!-- end mobile -->
                                 <!-- desktop -->
                                 <div class="d-none d-md-block d-lg-block mt-3">
+
                                     <a href="{{ route('course.show', $data->course->slug) }}"
                                         class="btn shadow btn-dark btn-md mb-2">
                                         <i class="fas fa-play mr-1"></i>
@@ -87,6 +94,28 @@
                                         data-target="#modal-lg{{ $data->course->id }}">
                                         <i class="fas fa-comments mr-1"></i> Review Course
                                     </button>
+                                    {{-- Certification button --}}
+                                    @if ($data->course->certificate_id != null)
+                                        @if ($data->course->certificate_path != null)
+                                            <form action="{{ route('member.certificate.download', ['certificate' => $data->course->id]) }}" method="GET">
+                                                @csrf
+                                                @method('GET')
+                                                <button type="submit" class="btn btn-primary btn-md mb-2">
+                                                    <i class="fas fa-comments mr-1"></i> Lihat Sertifikat
+                                                </button>
+                                            </form>
+                                        @else
+                                            <form action="{{ route('member.certificate.generate', ['course' => $data->course->id]) }}" method="POST">
+                                                @csrf
+                                                @method('PUT')
+                                                <button type="submit" class="btn btn-primary btn-md mb-2">
+                                                    <i class="fas fa-comments mr-1"></i> Cetak sertifikat
+                                                </button>
+                                            </form>
+                                        @endif
+                                    @else
+                                    @endif
+                                    {{-- End Certification button --}}
                                     <div class="modal fade" id="modal-lg{{ $data->course->id }}">
                                         <div class="modal-dialog modal-lg">
                                             <form action="{{ route('member.review', $data->course->id) }}" method="POST">
