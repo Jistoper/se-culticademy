@@ -40,7 +40,7 @@ class CertificateController extends Controller
             ]);
 
         // Return the created CourseCertification model if needed
-        return $this->downloadCertificate($certificate);
+        return $certificate;
     }
 
     public function downloadCertificate($certificateId)
