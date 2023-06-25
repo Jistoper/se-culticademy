@@ -49,14 +49,10 @@
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                                     <path d="M7 4v16l13 -8z"></path>
                                                 </svg>
-                                                <p class="text-xs md:text-sm ml-2 hover:text-red-500">
-                                                    {{ $video->episode }}. {{ $video->name }}
-                                                </p>
-                                            @else
-                                                <p class="text-xs md:text-sm ml-2 hover:text-red-500 text-slate-800">
-                                                    {{ $video->episode }}. {{ $video->name }}
-                                                </p>
                                             @endif
+                                            <p class="text-xs md:text-sm ml-2 hover:text-red-500 text-slate-700">
+                                                {{ $video->episode }}. {{ $video->name }}
+                                            </p>
                                         </a>
                                         <div class="text-xs md:text-sm">
                                             @if ($video->intro == 0)

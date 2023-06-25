@@ -53,10 +53,13 @@
                                                     {{ $video->episode }}. {{ $video->name }}
                                                 </p>
                                             @else
-                                                <p class="text-xs md:text-sm ml-2 hover:text-red-500 text-slate-800">
+                                                <p class="text-xs md:text-sm ml-2 hover:text-red-500 text-slate-700">
                                                     {{ $video->episode }}. {{ $video->name }}
                                                 </p>
                                             @endif
+                                            <p class="text-xs md:text-sm ml-2 hover:text-red-500 text-slate-700">
+                                                {{ $video->episode }}. {{ $video->name }}
+                                            </p>
                                         </a>
                                         <div class="text-xs md:text-sm">
                                             @if ($video->intro == 0)
