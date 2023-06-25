@@ -38,7 +38,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="p-4 space-y-2 text-sm rounded-b-lg bg-white text-gray-600 border-t border-line border-slate-800">
+                        <div class="p-4 space-y-2 text-sm rounded-b-lg bg-white text-gray-600 ">
                             <p class="text-justify">
                                 {{ $forum->forum_desc }}
                             </p>

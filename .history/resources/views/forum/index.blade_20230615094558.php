@@ -3,7 +3,7 @@
 @section('content')
     <!-- hero section -->
     <x-landing.hero-section title="Forum" subtitle="Kumpulan Comment dari para member disini"
-        details="Forum ini menyediakan ruang diskusi yang memungkinkan peserta kursus untuk bertanya, menjawab, dan berbagi pengalaman mereka seputar pertanian."
+        details="Forum ini menyediakan ruang diskusi yang memungkinkan peserta kursus untuk bertanya, menjawab, dan berbagi pengalaman mereka seputar pertanian. Para pengajar juga aktif berpartisipasi dalam forum ini, memberikan saran, pemecahan masalah, dan pemahaman mendalam tentang topik yang sedang dibahas."
         :data="$forums" cardtitle="Topic">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-2 w-10 h-10 md:w-20 md:h-20"
             width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="white" fill="none"
@@ -30,9 +30,9 @@
                                     {{ $forum->forum_title }}
                                 </a>
                             </div>
-                            <div class="flex items-center space-x-1 text-white text-sm">
+                            <div class="flex items-center space-x-1 text-white text-xs">
                                 <img src="{{ $forum->user->avatar }}" alt=""
-                                    class="object-cover w-6 h-6 rounded-full border">
+                                    class="object-cover w-5 h-5 rounded-full border">
                                 <span>
                                     {{ $forum->user->name }}
                                 </span>
