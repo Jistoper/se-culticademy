@@ -3,6 +3,8 @@
 
 ## About Culticademy
 
+Culticademy is an online platform focused on agricultural education. Culticademy offer a wide range of educational videos and courses, covering various aspects of agriculture. From crop cultivation to sustainable farming practices, our content is designed to empower learners of all levels. Join our community today and embark on a journey of agricultural discovery. Start learning for free or explore our premium courses to enhance your knowledge and skills. Connect with like-minded individuals in our interactive forum and grow together.
+
 ## Contributors
 
 1. Jonathan A - [@Jistoper](https://github.com/Jistoper)
