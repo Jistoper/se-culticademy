@@ -50,18 +50,13 @@ class DashboardController extends Controller
             tampung data best course kedalam variabel $bestCourse, disini kita melakukan sebuah query builder untuk memanipulasi data yang akan kita ambil yaitu hanya berupa sebuah nama course dan total dari transaction course tersebut yang kita ubah namanya menjadi total, disini kita tetapkan limit data yang di ambil hanya berjumlah 5.
          */
         $bestCourse = DB::table('transaction_details')
-
             ->select(DB::raw('courses.name as name, count(transaction_details.course_id) as total'))
-
             ->join('courses', 'courses.id', 'transaction_details.course_id')
-
             ->groupBy('transaction_details.course_id', 'courses.name') // Include courses.name in the GROUP BY clause
-
             ->orderBy('total', 'DESC')
-
             ->limit(5)
-
             ->get();
+
 
         // tampung data array kosong kedalam variabel $label.
         $label = [];

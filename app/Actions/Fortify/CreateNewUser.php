@@ -47,6 +47,10 @@ class CreateNewUser implements CreatesNewUsers
 
         $user->assignRole($role);
 
+        $admin = User::role('admin')->get();
+
+        Notification::send($admin, new NewMember($user));
+
         return $user;
     }
 }

@@ -29,7 +29,7 @@
                         <path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"></path>
                     </svg>
                 </div>
-                {{-- <a href="{{ route('admin.transaction.index') }}" class="small-box-footer"> --}}
+                <a href="{{ route('admin.transaction.index') }}" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
@@ -51,7 +51,7 @@
                         <rect x="5" y="6" width="14" height="10" rx="1"></rect>
                     </svg>
                 </div>
-                {{-- <a href="{{ route('admin.course.index') }}" class="small-box-footer"> --}}
+                <a href="{{ route('admin.course.index') }}" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
@@ -75,7 +75,7 @@
                         <circle cx="7" cy="7" r="3"></circle>
                     </svg>
                 </div>
-                {{-- <a href="{{ route('admin.category.index') }}" class="small-box-footer"> --}}
+                <a href="{{ route('admin.category.index') }}" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
@@ -98,7 +98,7 @@
                         <path d="M10 9l2 -2l-2 -2"></path>
                     </svg>
                 </div>
-                {{-- <a href="{{ route('admin.showcase.index') }}" class="small-box-footer"> --}}
+                <a href="{{ route('admin.showcase.index') }}" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
@@ -123,7 +123,7 @@
                         <line x1="8" y1="13" x2="14" y2="13"></line>
                     </svg>
                 </div>
-                {{-- <a href="{{ route('admin.review.index') }}" class="small-box-footer"> --}}
+                <a href="{{ route('admin.review.index') }}" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
@@ -146,7 +146,7 @@
                         </path>
                     </svg>
                 </div>
-                {{-- <a href="{{ route('admin.transaction.index') }}" class="small-box-footer"> --}}
+                <a href="{{ route('admin.transaction.index') }}" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
@@ -170,7 +170,7 @@
                         <path d="M21 21v-2a4 4 0 0 0 -3 -3.85"></path>
                     </svg>
                 </div>
-                {{-- <a href="{{ route('admin.user.index') }}" class="small-box-footer"> --}}
+                <a href="{{ route('admin.user.index') }}" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
@@ -193,7 +193,7 @@
                         <path d="M16 11l2 2l4 -4"></path>
                     </svg>
                 </div>
-                {{-- <a href="{{ route('admin.user.index') }}" class="small-box-footer"> --}}
+                <a href="{{ route('admin.user.index') }}" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>

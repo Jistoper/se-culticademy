@@ -75,6 +75,11 @@ class User extends Authenticatable
         return $this->hasMany(Review::class);
     }
 
+    public function forums()
+    {
+        return $this->hasMany(Forum::class);
+    }
+
     public function showcases()
     {
         return $this->hasMany(Showcase::class);
