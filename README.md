@@ -3,11 +3,17 @@
 
 ## About Culticademy
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
 ## Contributors
 
+1. Jonathan A - [@Jistoper](https://github.com/Jistoper)
+2. Deny A - [@denyandriawan01](https://github.com/denyandriawan01)
+3. Naufal Humam - [@nhumam123](https://github.com/nhumam123)
+4. Raffi Naufal - [@RaffiN2002](https://github.com/RaffiN2002)
+5. Muhammad Rizqi - [@wisp100](https://github.com/wisp100)
+
 ## Code of Conduct
+
+This project is used for learning purposes. This project is part of a campus assignment and is under development by the culticademy group. Personal use is permitted for learning purposes. Commercial use of this source code is not permitted.
 
 ## License
 
