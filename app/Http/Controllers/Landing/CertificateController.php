@@ -93,19 +93,6 @@ class CertificateController extends Controller
         // Set the paper size and orientation
         $dompdf->setPaper('A4', 'landscape');
 
-        // Get the default options
-        $options = new Options();
-        $options->set('isRemoteEnabled', true);
-        $options->set('isFontSubsettingEnabled', true);
-
-        // Specify the font families
-        $options->set('fontDir', public_path('fonts/'));
-        $options->set('defaultFont', 'Arial');
-        $options->set('fontFamily', 'Arial, PinyonScript'); // Multiple font families separated by comma
-        $options->setFontFa
-        // Set the options for the Dompdf instance
-        $dompdf->setOptions($options);
-
         // Load the HTML content into dompdf
         $dompdf->loadHtml($html);
 

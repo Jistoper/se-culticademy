@@ -2,275 +2,244 @@
 <html>
 <head>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-  <style>
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pinyon+Script|Rochester');
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans|Pinyon+Script|Rochester');
 
-    @font-face {
-      font-family: 'Pinyon Script';
-      src: url('https://fonts.googleapis.com/css?family=Pinyon+Script&display=swap');
-    }
+        .a4-layout {
+            width: 21cm;
+            height: 29.7cm;
+            margin: 0 auto;
+            page-break-inside: avoid;
+        }
 
-    @font-face {
-      font-family: 'Open Sans';
-      src: url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-    }
+        .pm-certificate-title {
+            text-align: center;
+        }
 
-    @font-face {
-      font-family: 'Rochester';
-      src: url('https://fonts.googleapis.com/css?family=Rochester&display=swap');
-    }
+        .pm-certificate-name,
+        .pm-earned,
+        .pm-course-title {
+            text-align: center !important;
+        }
 
-.a4-layout {
-  width: 21cm;
-  height: 29.7cm;
-  margin: 0 auto;
-  page-break-inside: avoid;
-}
+        .cursive {
+            font-family: 'Pinyon Script', cursive;
+        }
 
-.pm-certificate-title {
-    text-align: center;
-}
+        .sans {
+            font-family: 'Open Sans', sans-serif;
+        }
 
-.pm-certificate-name,
-.pm-earned,
-.pm-course-title {
-    text-align: center !important;
-}
+        .bold {
+            font-weight: bold;
+        }
 
-.cursive {
-  font-family: 'Pinyon Script', cursive;
-}
+        .block {
+            display: block;
+        }
 
-.sans {
-  font-family: 'Open Sans', sans-serif;
-}
+        .underline {
+            border-bottom: 1px solid #777;
+            padding: 5px;
+            margin-bottom: 15px;
+        }
 
-.bold {
-  font-weight: bold;
-}
+        .margin-0 {
+            margin: 0;
+        }
 
-.block {
-  display: block;
-}
+        .padding-0 {
+            padding: 0;
+        }
 
-.underline {
-  border-bottom: 1px solid #777;
-  padding: 5px;
-  margin-bottom: 15px;
-}
+        .pm-empty-space {
+            height: 40px;
+            width: 100%;
+        }
 
-.margin-0 {
-  margin: 0;
-}
+        body {
+            padding: 20px 0;
+            background: #ccc;
+        }
 
-.padding-0 {
-  padding: 0;
-}
+        .pm-certificate-container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #618597;
+            padding: 30px;
+            color: #333;
+            font-family: 'Open Sans', sans-serif;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+        }
 
-.pm-empty-space {
-  height: 40px;
-  width: 100%;
-}
+        .outer-border {
+            width: 794px;
+            height: 594px;
+            position: absolute;
+            left: 50%;
+            margin-left: -397px;
+            top: 50%;
+            margin-top: -297px;
+            border: 2px solid #fff;
+        }
 
-body {
-  padding: 20px 0;
-  background: #ccc;
-}
+        .inner-border {
+            width: 730px;
+            height: 530px;
+            position: absolute;
+            left: 50%;
+            margin-left: -365px;
+            top: 50%;
+            margin-top: -265px;
+            border: 2px solid #fff;
+        }
 
-.pm-certificate-container {
-  position: relative;
-  width: 800px;
-  height: 600px;
-  background-color: #618597;
-  padding: 30px;
-  color: #333;
-  font-family: 'Open Sans', sans-serif;
-  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
-  /*background: -webkit-repeating-linear-gradient(
-    45deg,
-    #618597,
-    #618597 1px,
-    #b2cad6 1px,
-    #b2cad6 2px
-  );
-  background: repeating-linear-gradient(
-    90deg,
-    #618597,
-    #618597 1px,
-    #b2cad6 1px,
-    #b2cad6 2px
-  );*/
+        .pm-certificate-border {
+            position: relative;
+            width: 720px;
+            height: 520px;
+            padding: 0;
+            border: 1px solid #E1E5F0;
+            background-color: rgba(255, 255, 255, 1);
+            background-image: none;
+            left: 50%;
+            margin-left: -360px;
+            top: 50%;
+            margin-top: -260px;
+        }
 
-  .outer-border {
-    width: 794px;
-    height: 594px;
-    position: absolute;
-    left: 50%;
-    margin-left: -397px;
-    top: 50%;
-    margin-top:-297px;
-    border: 2px solid #fff;
-  }
+        .pm-certificate-block {
+            width: 650px;
+            height: 200px;
+            position: relative;
+            left: 50%;
+            margin-left: -325px;
+            top: 70px;
+            margin-top: 0;
+        }
 
-  .inner-border {
-    width: 730px;
-    height: 530px;
-    position: absolute;
-    left: 50%;
-    margin-left: -365px;
-    top: 50%;
-    margin-top:-265px;
-    border: 2px solid #fff;
-  }
+        .pm-certificate-header {
+            margin-bottom: 10px;
+        }
 
-  .pm-certificate-border {
-    position: relative;
-    width: 720px;
-    height: 520px;
-    padding: 0;
-    border: 1px solid #E1E5F0;
-    background-color: rgba(255, 255, 255, 1);
-    background-image: none;
-    left: 50%;
-    margin-left: -360px;
-    top: 50%;
-    margin-top: -260px;
+        .pm-certificate-title h2 {
+            font-size: 50px;
+        }
 
-    .pm-certificate-block {
-      width: 650px;
-      height: 200px;
-      position: relative;
-      left: 50%;
-      margin-left: -325px;
-      top: 70px;
-      margin-top: 0;
-    }
+        .pm-certificate-title {
+            position: relative;
+            text-align: center;
+            top: 40px;
+        }
 
-    .pm-certificate-header {
-      margin-bottom: 10px;
-    }
-    .pm-certificate-title h2 {
-    font-size: 50px;
-    }
-    .pm-certificate-title {
-      position: relative;
-      text-align: center;
-      top: 40px;
+        .pm-certificate-body {
+            padding: 20px;
+        }
 
-      h2 {
-        font-size: 34px !important;
-      }
-    }
+        .pm-name-text {
+            font-size: 35px;
+        }
 
-    .pm-certificate-body {
-      padding: 20px;
+        .pm-earned {
+            margin: 15px 0 20px;
+        }
 
-      .pm-name-text {
-        font-size: 20px;
-      }
-    }
+        .pm-earned-text {
+            font-size: 20px;
+        }
 
-    .pm-earned {
-      margin: 15px 0 20px;
-      .pm-earned-text {
-        font-size: 20px;
-      }
-      .pm-credits-text {
-        font-size: 15px;
-      }
-    }
+        .pm-credits-text {
+            font-size: 20px;
+        }
 
-    .pm-course-title {
-      .pm-earned-text {
-        font-size: 20px;
-      }
-      .pm-credits-text {
-        font-size: 15px;
-      }
-    }
+        .pm-course-title .pm-earned-text {
+            font-size: 20px;
+        }
 
-    .pm-certified {
-      font-size: 12px;
+        .pm-course-title .pm-credits-text {
+            font-size: 15px;
+        }
 
-      .underline {
-        margin-bottom: 5px;
-      }
-    }
+        .pm-certified {
+            font-size: 12px;
+        }
 
-    .pm-certificate-footer {
-      width: 650px;
-      height: 100px;
-      position: relative;
-      left: 50%;
-      margin-left: -325px;
-      bottom: -105px;
-    }
-  }
-}
+        .pm-certified .underline {
+            margin-bottom: 5px;
+        }
 
-  </style>
+        .pm-certificate-footer {
+            width: 650px;
+            height: 100px;
+            position: relative;
+            left: 50%;
+            margin-left: -325px;
+            bottom: -105px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container pm-certificate-container a4-layout">
-      <div class="outer-border"></div>
-      <div class="inner-border"></div>
+<div class="container pm-certificate-container a4-layout">
+    <div class="outer-border"></div>
+    <div class="inner-border"></div>
 
-      <div class="pm-certificate-border col-xs-12">
+    <div class="pm-certificate-border col-xs-12">
         <div class="row pm-certificate-header">
             <div class="pm-certificate-title cursive col-xs-12 text-center">
                 <h2>Certificate of Completion</h2>
-              </div>
+            </div>
         </div>
 
         <div class="row pm-certificate-body">
 
-          <div class="pm-certificate-block">
-              <div class="col-xs-12">
-                <div class="row">
-                  <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
-                  <div class="pm-certificate-name underline margin-0 col-xs-8 text-center">
-                    <span class="pm-name-text bold">{{ $name }}</span>
-                  </div>
-                  <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
+            <div class="pm-certificate-block">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
+                        <div class="pm-certificate-name underline margin-0 col-xs-8 text-center">
+                            <span class="pm-name-text bold">{{ $name }}</span>
+                        </div>
+                        <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
+                    </div>
                 </div>
-              </div>
 
-              <div class="col-xs-12">
-                <div class="row">
-                  <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
-                  <div class="pm-earned col-xs-8 text-center">
-                    <span class="pm-earned-text padding-0 block cursive bold">For completing the course:</span>
-                    <span class="pm-credits-text block bold sans">{{ $course }}</span>
-                  </div>
-                  <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
-                  <div class="col-xs-12"></div>
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
+                        <div class="pm-earned col-xs-8 text-center">
+                            <span class="pm-earned-text padding-0 block cursive bold">For completing the course:</span>
+                            <span class="pm-credits-text block bold sans">{{ $course }}</span>
+                        </div>
+                        <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
+                        <div class="col-xs-12"></div>
+                    </div>
                 </div>
-              </div>
 
-              <div class="col-xs-12">
-                <div class="row">
-                  <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
-                  <div class="pm-course-title col-xs-8 text-center">
-                    <span class="pm-earned-text block cursive bold">On</span>
-                  </div>
-                  <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
+                        <div class="pm-course-title col-xs-8 text-center">
+                            <span class="pm-earned-text block cursive bold">On</span>
+                        </div>
+                        <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
+                    </div>
                 </div>
-              </div>
 
-              <div class="col-xs-12">
-                <div class="row">
-                  <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
-                  <div class="pm-course-title col-xs-8 text-center">
-                    <span class="pm-credits-text block bold sans">{{ $date }}</span>
-                  </div>
-                  <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
+                        <div class="pm-course-title col-xs-8 text-center">
+                            <span class="pm-credits-text block bold sans">{{ $date }}</span>
+                        </div>
+                        <div class="col-xs-2"><!-- LEAVE EMPTY --></div>
+                    </div>
                 </div>
-              </div>
-          </div>
+            </div>
 
         </div>
 
-      </div>
     </div>
-  </body>
+</div>
+</body>
 </html>
