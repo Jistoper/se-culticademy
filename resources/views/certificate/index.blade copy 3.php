@@ -5,21 +5,6 @@
   <style>
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Pinyon+Script|Rochester');
 
-    @font-face {
-      font-family: 'Pinyon Script';
-      src: url('https://fonts.googleapis.com/css?family=Pinyon+Script&display=swap');
-    }
-
-    @font-face {
-      font-family: 'Open Sans';
-      src: url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-    }
-
-    @font-face {
-      font-family: 'Rochester';
-      src: url('https://fonts.googleapis.com/css?family=Rochester&display=swap');
-    }
-
 .a4-layout {
   width: 21cm;
   height: 29.7cm;

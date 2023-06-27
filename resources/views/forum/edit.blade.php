@@ -1,4 +1,4 @@
-@extends('layouts.backend.app', ['title' => 'Edit Forum'])
+@extends('layouts.frontend.app', ['title' => 'Edit Forum'])
 
 @section('content')
     <div class="flex items-center justify-between mb-6">
