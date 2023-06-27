@@ -15,8 +15,8 @@
             <line x1="8" y1="13" x2="14" y2="13"></line>
         </svg>
     </x-landing.hero-section>
-    <!-- serach section -->
-    <x-landing.search-section :url="route('forum.index')" />
+    <!-- search section -->
+    <x-landing.search-section :url="route('forum.index')" :search="$search" />
     <!-- Forum section -->
     <div class="w-full bg-gray-100 p-3 border border-line border-gray-100">
         <div class="container mx-auto">

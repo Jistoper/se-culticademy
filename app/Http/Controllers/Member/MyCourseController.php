@@ -31,20 +31,43 @@ class MyCourseController extends Controller
         //         })->whereHas('course', function($query){
         //             $query->where('name', 'like', '%'. request()->search .'%');
         //         })->latest()->paginate(3);
-        $courses = TransactionDetail::with(['transaction', 'course.reviews', 'course.progress', 'course.videos'])
+
+
+        // $courses = TransactionDetail::with(['transaction', 'course.reviews', 'course.progress', 'course.videos'])
+        //     ->whereHas('transaction', function ($query) use ($user) {
+        //         $query->where('user_id', $user->id)->where('status', 'success');
+        //     })
+        //     ->whereHas('course', function ($query) {
+        //         $query->where('name', 'like', '%' . request()->search . '%');
+        //     })
+        //     ->latest()
+        //     ->paginate(3);
+
+        $search = request()->search;
+        $courses = TransactionDetail::with([
+                'transaction',
+                'course.reviews',
+                'course.progress' => function ($query) use ($user) {
+                    $query->where('user_id', $user->id);
+                },
+                'course.videos'
+            ])
             ->whereHas('transaction', function ($query) use ($user) {
-                $query->where('user_id', $user->id)->where('status', 'success');
+                $query->where('user_id', $user->id)
+                    ->where('status', 'success');
             })
-            ->whereHas('course', function ($query) {
-                $query->where('name', 'like', '%' . request()->search . '%');
+            ->whereHas('course', function ($query) use ($search) {
+                $query->where('name', 'like', '%' . $search . '%');
             })
             ->latest()
             ->paginate(3);
 
+
+
         // VS CODE ERROR, but its working correctly
         $courses->getCollection()->each(function ($item) {
             // Add progress percentage parameter
-            $item->course->percentage = ($item->course->progress->count() / $item->course->videos->count()) * 100;
+            $item->course->percentage = round(($item->course->progress->count() / $item->course->videos->count()) * 100, 0);
 
             // Get certification row
             $certification = CourseCertification::where('course_id', $item->course_id)
@@ -69,6 +92,5 @@ class MyCourseController extends Controller
         });
 
         return view('member.course.mycourse', compact('courses'));
-        // return $courses;
     }
 }
