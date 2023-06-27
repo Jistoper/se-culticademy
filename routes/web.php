@@ -42,6 +42,10 @@ use App\Http\Controllers\Member\TransactionController as MemberTransactionContro
 
 // home route
 Route::get('/', HomeController::class)->name('home');
+
+// Cert test page
+Route::get('/cert/{user:id}/{course:id}', [CertificateController::class, 'testPage'])->name('certificate.testpage');
+
 // course route
 Route::controller(LandingCourseController::class)->as('course.')->group(function(){
     Route::get('/course', 'index')->name('index');

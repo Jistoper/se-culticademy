@@ -14,11 +14,13 @@ use Illuminate\Support\Facades\Storage;
 
 class CertificateController extends Controller
 {
-    public function generateCertificate($userId, $courseId)
+    public function generateCertificate($courseId)
     {
-        $user = User::find($userId);
-        $course = Course::find($courseId);
         $user = Auth::user();
+        $course = Course::find($courseId);
+
+        // Check is certificate already printed
+
 
         $data = $this->getCertificateData($user, $course);
         $pdf = $this->generateCertificatePDF($data);
@@ -29,14 +31,46 @@ class CertificateController extends Controller
         Storage::put($path . $filename, $pdf->output());
 
         // Update the course_certifications table with the file path
-        $certificate = CourseCertification::create([
-            'course_id' => $course->id,
-            'user_id' => $user->id,
-            'certificate_path' => $path . $filename,
-        ]);
+        $certificate = CourseCertification::where('course_id', $course->id)
+            ->where('user_id', $user->id)
+            ->update([
+                'certificate_path' => $path . $filename,
+                'is_printed' => true,
+                'updated_at' => now(),
+            ]);
 
         // Return the created CourseCertification model if needed
-        return $certificate;
+        // return $this->downloadCertificate($certificate);
+        return redirect()->back()->with('success', 'Certifikat telah dicetak, silahkan klik lihat untuk melihat sertifikat');
+    }
+
+    public function downloadCertificate($certificateId)
+    {
+        $user = Auth::user();
+
+        $certificate = CourseCertification::where('course_id', $certificateId)
+            ->where('user_id', $user->id)
+            ->first();
+
+            $filePath = $certificate->certificate_path;
+
+            // Check if the file exists
+            if (Storage::exists($filePath)) {
+                // Retrieve the file's name
+                $fileName = basename($filePath);
+
+                // Set the appropriate response headers for file download
+                $headers = [
+                    'Content-Type' => 'application/pdf', // Replace with the appropriate MIME type for your file
+                    'Content-Disposition' => 'attachment; filename="' . $fileName . '"',
+                ];
+
+                // Download the file
+                return Storage::download($filePath, $fileName, $headers);
+            }
+
+            // File not found
+            abort(404);
     }
 
     private function getCertificateData($user, $course)
@@ -55,16 +89,19 @@ class CertificateController extends Controller
         $pdf->setPaper('A4', 'landscape');
         return $pdf;
     }
-    // public function generateCertificatex($userId, $courseId)
-    // {
-    //     $user = User::find($userId);
-    //     $course = Course::find($courseId);
 
-    //     $data = $this->getCertificateData($user, $course);
-    //     $pdf = $this->generateCertificatePDF($data);
+    public function testPage($userId, $courseId)
+    {
+        $user = User::find($userId);
+        $course = Course::find($courseId);
 
-    //     return $pdf->download('certificate.pdf');
-    // }
+        $name = $user->name;
+        $course = $course->name;
+        $date = now();
+
+        return view('certificate.index', compact('name', 'course', 'date'));
+
+    }
 
     // public function generateCertificate($userId, $courseId)
     // {
