@@ -153,6 +153,7 @@ class ForumController extends Controller
         return redirect()->route('forum.show', $id);
     }
 
+
     /**
      * Remove the specified resource from storage.
      *

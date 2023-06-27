@@ -134,7 +134,7 @@ class ForumController extends Controller
         $message = $validatedData['message'];
 
         // Check if the input contains only HTML special characters
-        if (preg_match('/^(&nbsp;|\s)+$/', $message)) {
+        if (preg_match('/^(<br>|&nbsp;|\s)+$/', $message)) {
             return redirect()->back()->withErrors(['message' => 'Invalid input.']);
         }
 

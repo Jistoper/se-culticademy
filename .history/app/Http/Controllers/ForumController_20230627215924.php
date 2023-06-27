@@ -134,7 +134,7 @@ class ForumController extends Controller
         $message = $validatedData['message'];
 
         // Check if the input contains only HTML special characters
-        if (preg_match('/^(&nbsp;|\s)+$/', $message)) {
+        if (preg_match('/^(<br>|&nbsp;|\s)+$/', $message)) {
             return redirect()->back()->withErrors(['message' => 'Invalid input.']);
         }
 
@@ -144,6 +144,9 @@ class ForumController extends Controller
         // Remove disallowed HTML tags except for <br>
         $messageWithLineBreaks = strip_tags($messageWithLineBreaks, '<br>');
 
+        // Escape HTML special characters
+        $messageWithLineBreaks = htmlspecialchars($messageWithLineBreaks, ENT_QUOTES | ENT_HTML5);
+
         $discussion = new ForumDiscussion;
         $discussion->forum_id = $id;
         $discussion->user_id = Auth::id();
@@ -152,6 +155,7 @@ class ForumController extends Controller
 
         return redirect()->route('forum.show', $id);
     }
+
 
     /**
      * Remove the specified resource from storage.

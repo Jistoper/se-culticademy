@@ -128,18 +128,11 @@ class ForumController extends Controller
     public function storeDiscussion(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'message' => 'required|string',
+            'message' => 'required',
         ]);
 
-        $message = $validatedData['message'];
-
-        // Check if the input contains only HTML special characters
-        if (preg_match('/^(&nbsp;|\s)+$/', $message)) {
-            return redirect()->back()->withErrors(['message' => 'Invalid input.']);
-        }
-
         // Replace newlines with line breaks
-        $messageWithLineBreaks = nl2br($message);
+        $messageWithLineBreaks = nl2br($validatedData['message']);
 
         // Remove disallowed HTML tags except for <br>
         $messageWithLineBreaks = strip_tags($messageWithLineBreaks, '<br>');
@@ -152,6 +145,7 @@ class ForumController extends Controller
 
         return redirect()->route('forum.show', $id);
     }
+
 
     /**
      * Remove the specified resource from storage.

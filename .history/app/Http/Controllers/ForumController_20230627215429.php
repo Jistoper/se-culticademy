@@ -133,11 +133,6 @@ class ForumController extends Controller
 
         $message = $validatedData['message'];
 
-        // Check if the input contains only HTML special characters
-        if (preg_match('/^(&nbsp;|\s)+$/', $message)) {
-            return redirect()->back()->withErrors(['message' => 'Invalid input.']);
-        }
-
         // Replace newlines with line breaks
         $messageWithLineBreaks = nl2br($message);
 
@@ -148,6 +143,11 @@ class ForumController extends Controller
         $discussion->forum_id = $id;
         $discussion->user_id = Auth::id();
         $discussion->message = new HtmlString($messageWithLineBreaks);
+        
+        if (preg_match('/^(<br>|&nbsp;|\s)+$/', $message)) {
+            return redirect()->route('forum.show', $id);
+        }
+
         $discussion->save();
 
         return redirect()->route('forum.show', $id);
