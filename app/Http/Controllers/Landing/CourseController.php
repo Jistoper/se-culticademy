@@ -134,6 +134,7 @@ class CourseController extends Controller
 
         // Check if the row already exists
         $existingProgression = CourseProgression::where('course_id', $courseId)
+            ->where('user_id', $userId)
             ->where('session_id', $sessionId)
             ->first();
 
@@ -159,7 +160,8 @@ class CourseController extends Controller
                 'is_printed' => false,
                 'certificate_path' => null,
             ]);
-            return redirect()->back()->with('success', 'Selamat, Semua Course telah terselesaikan.');
+            return redirect()->route('member.mycourse')->with('success', 'Selamat, Semua Course telah terselesaikan.');
+            // return redirect()->back()->with('success', 'Selamat, Semua Course telah terselesaikan.');
         }
         // Redirect back or to another page after inserting the course_progression record
         return redirect()->back()->with('success', 'Progress dari Course telah disimpan.');
