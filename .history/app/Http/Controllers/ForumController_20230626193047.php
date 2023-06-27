@@ -80,11 +80,8 @@ class ForumController extends Controller
     public function edit($id)
     {
         $forum = Forum::findOrFail($id);
-        if ($forum->user_id != Auth::id()) {
-            if (Auth::id() != 1)
-            {
-                return redirect()->route('forum.show', $id);
-            }
+        if (($forum->user_id != Auth::id()) || (Auth::id() != 1)) {
+            return redirect()->route('forum.show', $id);
         }
         return view('forum.edit', compact('forum'));
     }

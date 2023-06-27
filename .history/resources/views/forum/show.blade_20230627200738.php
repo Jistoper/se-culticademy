@@ -1,21 +1,5 @@
 @extends('layouts.frontend.app', ['title' => $forum->forum_title])
 
-<script>
-    // Open the modal
-    function openModal() {
-        var modal = document.getElementById("modal");
-        modal.style.display = "block";
-        document.body.style.overflow = "hidden";
-    }
-
-    // Close the modal
-    function closeModal() {
-        var modal = document.getElementById("modal");
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-    }
-</script>
-
 @section('content')
     <div class="max-w-7xl-auto py-6 sm:px-6 lg:px-8 bg-culti-green-4 items-center">
         <div class="sm:container sm:mx-auto px-6 rounded flex items-center justify-between mb-2">
@@ -24,60 +8,49 @@
                 <h2 class="text-2xl font-semibold text-white">{{ $forum->forum_title }}</h2>
             </div>
             @if (Auth::check() && Auth::id() == $forum->user_id || 1)
-                <div id="modal" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" hidden>
-                    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-                    <div class="fixed inset-0 z-10 overflow-y-auto">
-                        <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-                            <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                                <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                                    <div class="items-center text-right mb-2">
-                                        <button class="text-red-500 hover:text-red-700" onclick="closeModal()">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="24" height="24">
-                                                <rect width="25" height="25" fill="none"></rect>
-                                                <path d="M128,24A104,104,0,1,0,232,128,104.12041,104.12041,0,0,0,128,24Zm37.65625,130.34375a7.99915,7.99915,0,1,1-11.3125,
-                                                11.3125L128,139.3125l-26.34375,26.34375a7.99915,7.99915,0,0,1-11.3125-11.3125L116.6875,128,90.34375,101.65625a7.99915,7.99915,
-                                                0,0,1,11.3125-11.3125L128,116.6875l26.34375-26.34375a7.99915,7.99915,0,0,1,11.3125,11.3125L139.3125,128Z" fill="currentColor" class="color000 svgShape"></path>
-                                            </svg>
-                                        </button>
+                <!-- Modal toggle -->
+                <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                    Toggle modal
+                </button>
+                <!-- Main modal -->
+                <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                    <div class="relative w-full max-w-md max-h-full">
+                        <!-- Modal content -->
+                        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                            <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-hide="authentication-modal">
+                                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                            <div class="px-6 py-6 lg:px-8">
+                                <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
+                                <form class="space-y-6" action="#">
+                                    <div>
+                                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                                        <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required>
                                     </div>
-                                    <form action="{{ route('forum.update', $forum->id) }}" method="POST">
-                                        @csrf
-                                        @method('PUT')
-                                        <div class="-mx-3 md:flex mb-6">
-                                            <div class="md:w-full px-3">
-                                                <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" for="forum_title">
-                                                    Forum Title
-                                                </label>
-                                                <input class="appearance-none block w-full bg-gray-100 text-gray-700 border @error('forum_title') border-red-500 @enderror rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="forum_title" type="text" placeholder="Enter forum title" name="forum_title" value="{{ $forum->forum_title }}">
-                                                @error('forum_title')
-                                                    <p class="text-red-500 text-xs italic">{{ $message }}</p>
-                                                @enderror
+                                    <div>
+                                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                                        <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex items-start">
+                                            <div class="flex items-center h-5">
+                                                <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
                                             </div>
+                                            <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
                                         </div>
-                                        <div class="-mx-3 md:flex mb-6">
-                                            <div class="md:w-full px-3">
-                                                <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" for="forum_desc">
-                                                    Forum Description
-                                                </label>
-                                                <textarea class="appearance-none block w-full bg-gray-100 text-gray-700 border @error('forum_desc') border-red-500 @enderror rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="forum_desc" placeholder="Enter forum description" name="forum_desc">{{ $forum->forum_desc }}</textarea>
-                                                @error('forum_desc')
-                                                    <p class="text-red-500 text-xs italic">{{ $message }}</p>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center justify-between">
-                                            <button type="submit" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-blue-500 shadow-sm ring-1 ring-inset ring-blue-500 hover:bg-blue-500 hover:text-white sm:mt-0 sm:w-auto">
-                                                Update Forum
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
+                                        <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
+                                    </div>
+                                    <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
+                                    <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                                        Not registered? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <button onclick="openModal()" class="flex items-center space-x-2 sm:button bg-blue-600 hover:bg-blue-700 text-sm text-white font-semibold py-2 px-4 rounded">
+                </div> 
+                <a href="{{ route('forum.edit', $forum->id) }}" class="flex items-center space-x-2 sm:button bg-blue-600 hover:bg-blue-700 text-sm text-white font-semibold py-2 px-4 rounded">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message w-5 h-5 md:w-5 md:h-5" viewBox="0 0 53 53" width="20" height="20">
                         <path d="M42.2,24.27c-0.55,0-1,0.45-1,1v22.96c0,1.25-1.02,2.26-2.27,2.26H6.77c-1.25,0-2.26-1.02-2.26-2.26V16.07
                         c0-1.25,1.02-2.26,2.26-2.26h22.95c0.55,0,1-0.45,1-1s-0.45-1-1-1H6.77c-2.35,0-4.26,1.91-4.26,4.26v32.17
@@ -91,7 +64,7 @@
                     <p>
                         Edit Forum
                     </p>
-                </button>
+                </a>
             @endif
         </div>
         <hr class="h-px my-3 md-3 bg-white border-none">

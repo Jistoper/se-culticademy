@@ -1,21 +1,5 @@
 @extends('layouts.frontend.app', ['title' => $forum->forum_title])
 
-<script>
-    // Open the modal
-    function openModal() {
-        var modal = document.getElementById("modal");
-        modal.style.display = "block";
-        document.body.style.overflow = "hidden";
-    }
-
-    // Close the modal
-    function closeModal() {
-        var modal = document.getElementById("modal");
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-    }
-</script>
-
 @section('content')
     <div class="max-w-7xl-auto py-6 sm:px-6 lg:px-8 bg-culti-green-4 items-center">
         <div class="sm:container sm:mx-auto px-6 rounded flex items-center justify-between mb-2">
@@ -24,61 +8,8 @@
                 <h2 class="text-2xl font-semibold text-white">{{ $forum->forum_title }}</h2>
             </div>
             @if (Auth::check() && Auth::id() == $forum->user_id || 1)
-                <div id="modal" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" hidden>
-                    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-                    <div class="fixed inset-0 z-10 overflow-y-auto">
-                        <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-                            <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                                <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                                    <div class="items-center text-right mb-2">
-                                        <button class="text-red-500 hover:text-red-700" onclick="closeModal()">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="24" height="24">
-                                                <rect width="25" height="25" fill="none"></rect>
-                                                <path d="M128,24A104,104,0,1,0,232,128,104.12041,104.12041,0,0,0,128,24Zm37.65625,130.34375a7.99915,7.99915,0,1,1-11.3125,
-                                                11.3125L128,139.3125l-26.34375,26.34375a7.99915,7.99915,0,0,1-11.3125-11.3125L116.6875,128,90.34375,101.65625a7.99915,7.99915,
-                                                0,0,1,11.3125-11.3125L128,116.6875l26.34375-26.34375a7.99915,7.99915,0,0,1,11.3125,11.3125L139.3125,128Z" fill="currentColor" class="color000 svgShape"></path>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <form action="{{ route('forum.update', $forum->id) }}" method="POST">
-                                        @csrf
-                                        @method('PUT')
-                                        <div class="-mx-3 md:flex mb-6">
-                                            <div class="md:w-full px-3">
-                                                <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" for="forum_title">
-                                                    Forum Title
-                                                </label>
-                                                <input class="appearance-none block w-full bg-gray-100 text-gray-700 border @error('forum_title') border-red-500 @enderror rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="forum_title" type="text" placeholder="Enter forum title" name="forum_title" value="{{ $forum->forum_title }}">
-                                                @error('forum_title')
-                                                    <p class="text-red-500 text-xs italic">{{ $message }}</p>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                        <div class="-mx-3 md:flex mb-6">
-                                            <div class="md:w-full px-3">
-                                                <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" for="forum_desc">
-                                                    Forum Description
-                                                </label>
-                                                <textarea class="appearance-none block w-full bg-gray-100 text-gray-700 border @error('forum_desc') border-red-500 @enderror rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="forum_desc" placeholder="Enter forum description" name="forum_desc">{{ $forum->forum_desc }}</textarea>
-                                                @error('forum_desc')
-                                                    <p class="text-red-500 text-xs italic">{{ $message }}</p>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center justify-between">
-                                            <button type="submit" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-blue-500 shadow-sm ring-1 ring-inset ring-blue-500 hover:bg-blue-500 hover:text-white sm:mt-0 sm:w-auto">
-                                                Update Forum
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <button onclick="openModal()" class="flex items-center space-x-2 sm:button bg-blue-600 hover:bg-blue-700 text-sm text-white font-semibold py-2 px-4 rounded">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message w-5 h-5 md:w-5 md:h-5" viewBox="0 0 53 53" width="20" height="20">
+                <a href="{{ route('forum.edit', $forum->id) }}" class="sm:button bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-2 w-5 h-5 md:w-6 md:h-6" viewBox="0 0 60 60" width="20" height="20">
                         <path d="M42.2,24.27c-0.55,0-1,0.45-1,1v22.96c0,1.25-1.02,2.26-2.27,2.26H6.77c-1.25,0-2.26-1.02-2.26-2.26V16.07
                         c0-1.25,1.02-2.26,2.26-2.26h22.95c0.55,0,1-0.45,1-1s-0.45-1-1-1H6.77c-2.35,0-4.26,1.91-4.26,4.26v32.17
                         c0,2.35,1.91,4.26,4.26,4.26h32.17c2.35,0,4.27-1.91,4.27-4.26V25.27C43.2,24.72,42.75,24.27,42.2,24.27z" fill="#ffffff" class="color000 svgShape"></path>
@@ -88,10 +19,8 @@
                         l-4.56,1.48L29.59,22.32z M50.23,8.75l-2.35,2.35L43.9,7.12l2.35-2.35c0.36-0.36,0.96-0.36,1.32,0l2.66,2.66
                         C50.59,7.79,50.59,8.38,50.23,8.75z" fill="#ffffff" class="color000 svgShape"></path>
                     </svg>
-                    <p>
-                        Edit Forum
-                    </p>
-                </button>
+                    Edit Forum
+                </a>
             @endif
         </div>
         <hr class="h-px my-3 md-3 bg-white border-none">

@@ -5,14 +5,14 @@
     function openModal() {
         var modal = document.getElementById("modal");
         modal.style.display = "block";
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow = "hidden"; // Prevent scrolling of the background content
     }
 
     // Close the modal
     function closeModal() {
         var modal = document.getElementById("modal");
         modal.style.display = "none";
-        document.body.style.overflow = "auto";
+        document.body.style.overflow = "auto"; // Restore scrolling of the background content
     }
 </script>
 

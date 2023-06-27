@@ -291,7 +291,7 @@
             </div>
             <!-- Mobile Nav -->
             <div class="flex gap-1 items-center md:hidden">
-                <div class="rounded-lg px-4 py-2 bg-white text-culti-green-3">
+                <div class="rounded-lg border px-4 py-2 bg-white border-culti-green-3 text-culti-green-3">
                     <a href="{{ route('cart.index') }}">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="icon icon-tabler icon-tabler-basket w-5 h-5 {{ Route::is('cart.index') ? 'text-blue-500' : '' }}"
@@ -440,6 +440,22 @@
                                 </svg>
                                 <span class="text-gray-600 hover:text-blue-400 transition-colors">Forum</span>
                             </a>
+                        </li>
+                        <li>
+                            {{-- <a href="{{ route('showcase') }}"
+                                class="p-3 rounded-lg text-sm font-semibold text-white flex items-center gap-2 hover:text-blue-500 {{ activeNav('showcase') }}">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-source-code w-5 h-5" width="24"
+                                    height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="#054141"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M14.5 4h2.5a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-10a3 3 0 0 1 -3 -3v-5">
+                                    </path>
+                                    <path d="M6 5l-2 2l2 2"></path>
+                                    <path d="M10 9l2 -2l-2 -2"></path>
+                                </svg>
+                                Showcase
+                            </a> --}}
                         </li>
                         @guest
                             <li class="border-t border-dashed border-gray-700">

@@ -5,14 +5,14 @@
     function openModal() {
         var modal = document.getElementById("modal");
         modal.style.display = "block";
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow = "hidden"; // Prevent scrolling of the background content
     }
 
     // Close the modal
     function closeModal() {
         var modal = document.getElementById("modal");
         modal.style.display = "none";
-        document.body.style.overflow = "auto";
+        document.body.style.overflow = "auto"; // Restore scrolling of the background content
     }
 </script>
 
@@ -30,8 +30,8 @@
                         <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                             <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                                 <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                                    <div class="items-center text-right mb-2">
-                                        <button class="text-red-500 hover:text-red-700" onclick="closeModal()">
+                                    <div class="items-center text-right mb-3">
+                                        <button class="text-red-500 hover:text-green-500" onclick="closeModal()">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="24" height="24">
                                                 <rect width="25" height="25" fill="none"></rect>
                                                 <path d="M128,24A104,104,0,1,0,232,128,104.12041,104.12041,0,0,0,128,24Zm37.65625,130.34375a7.99915,7.99915,0,1,1-11.3125,

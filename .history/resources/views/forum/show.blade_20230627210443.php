@@ -5,14 +5,14 @@
     function openModal() {
         var modal = document.getElementById("modal");
         modal.style.display = "block";
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow = "hidden"; // Prevent scrolling of the background content
     }
 
     // Close the modal
     function closeModal() {
         var modal = document.getElementById("modal");
         modal.style.display = "none";
-        document.body.style.overflow = "auto";
+        document.body.style.overflow = "auto"; // Restore scrolling of the background content
     }
 </script>
 
@@ -24,15 +24,15 @@
                 <h2 class="text-2xl font-semibold text-white">{{ $forum->forum_title }}</h2>
             </div>
             @if (Auth::check() && Auth::id() == $forum->user_id || 1)
-                <div id="modal" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" hidden>
+                <div id="modal" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
                     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
                     <div class="fixed inset-0 z-10 overflow-y-auto">
                         <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                             <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                                 <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                                    <div class="items-center text-right mb-2">
-                                        <button class="text-red-500 hover:text-red-700" onclick="closeModal()">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="24" height="24">
+                                    <div class="items-center text-right mb-3">
+                                        <button class="text-red-500 hover:text-red-500" onclick="closeModal()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="20" height="20">
                                                 <rect width="25" height="25" fill="none"></rect>
                                                 <path d="M128,24A104,104,0,1,0,232,128,104.12041,104.12041,0,0,0,128,24Zm37.65625,130.34375a7.99915,7.99915,0,1,1-11.3125,
                                                 11.3125L128,139.3125l-26.34375,26.34375a7.99915,7.99915,0,0,1-11.3125-11.3125L116.6875,128,90.34375,101.65625a7.99915,7.99915,
@@ -77,7 +77,8 @@
                     </div>
                 </div>
 
-                <button onclick="openModal()" class="flex items-center space-x-2 sm:button bg-blue-600 hover:bg-blue-700 text-sm text-white font-semibold py-2 px-4 rounded">
+                <button onclick="openModal()">Open Modal</button>
+                <a href="{{ route('forum.edit', $forum->id) }}" class="flex items-center space-x-2 sm:button bg-blue-600 hover:bg-blue-700 text-sm text-white font-semibold py-2 px-4 rounded">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message w-5 h-5 md:w-5 md:h-5" viewBox="0 0 53 53" width="20" height="20">
                         <path d="M42.2,24.27c-0.55,0-1,0.45-1,1v22.96c0,1.25-1.02,2.26-2.27,2.26H6.77c-1.25,0-2.26-1.02-2.26-2.26V16.07
                         c0-1.25,1.02-2.26,2.26-2.26h22.95c0.55,0,1-0.45,1-1s-0.45-1-1-1H6.77c-2.35,0-4.26,1.91-4.26,4.26v32.17
@@ -91,7 +92,7 @@
                     <p>
                         Edit Forum
                     </p>
-                </button>
+                </a>
             @endif
         </div>
         <hr class="h-px my-3 md-3 bg-white border-none">
