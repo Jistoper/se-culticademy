@@ -15,20 +15,13 @@ class ForumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        // $courses = Course::withCount(['videos', 'reviews', 'details as enrolled' => function($query){
-        //     $query->whereHas('transaction', function($query){
-        //         $query->where('status', 'success');
-        //     });
-        // }])->search('name')->latest()->get();
-
-        // $forums = Forum::withCount([{
-
-        // }])->search('forum_title')->latest()->get();
-        // $forums = Forum::all()->search('forum_title');
-        $forums = Forum::all();
-        return view('forum.index', compact('forums'));
+        $search = $request->input('search');
+        $forums = Forum::when($search, function ($query, $search) {
+            return $query->where('forum_title', 'LIKE', "%{$search}%");
+        })->get();
+        return view('forum.index', compact('forums', 'search'));
     }
 
     /**
