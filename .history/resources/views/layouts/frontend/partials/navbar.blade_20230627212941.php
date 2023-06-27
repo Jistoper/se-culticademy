@@ -291,7 +291,7 @@
             </div>
             <!-- Mobile Nav -->
             <div class="flex gap-1 items-center md:hidden">
-                <div class="rounded-lg px-4 py-2 bg-white text-culti-green-3 border border-culti-green-3">
+                <div class="rounded-lg px-4 py-2 bg-white text-culti-green-3 border-culti-green-3">
                     <a href="{{ route('cart.index') }}">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="icon icon-tabler icon-tabler-basket w-5 h-5 {{ Route::is('cart.index') ? 'text-blue-500' : '' }}"
