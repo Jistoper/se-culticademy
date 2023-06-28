@@ -59,7 +59,7 @@
                                                 <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" for="forum_desc">
                                                     Forum Description
                                                 </label>
-                                                <textarea class="appearance-none block w-full bg-gray-100 text-gray-700 border @error('forum_desc') border-red-500 @enderror rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="forum_desc" placeholder="Enter forum description" name="forum_desc">{{ $forum->forum_desc }}</textarea>
+                                                <textarea style="height: 150px;" class="appearance-none block w-full bg-gray-100 text-gray-700 border @error('forum_desc') border-red-500 @enderror rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="forum_desc" placeholder="Enter forum description" name="forum_desc">{{ $forum->forum_desc }}</textarea>
                                                 @error('forum_desc')
                                                     <p class="text-red-500 text-xs italic">{{ $message }}</p>
                                                 @enderror
