@@ -128,10 +128,21 @@ class ForumController extends Controller
     public function storeDiscussion(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'message' => 'required',
+            'message' => 'required|string',
         ]);
 
-        $messageWithLineBreaks = nl2br($validatedData['message']);
+        $message = $validatedData['message'];
+
+        // Check if the input contains only HTML special characters
+        if (preg_match('/^(&nbsp;|\s)+$/', $message)) {
+            return redirect()->back()->withErrors(['message' => 'Invalid input.']);
+        }
+
+        // Replace newlines with line breaks
+        $messageWithLineBreaks = nl2br($message);
+
+        // Remove disallowed HTML tags except for <br>
+        $messageWithLineBreaks = strip_tags($messageWithLineBreaks, '<br>');
 
         $discussion = new ForumDiscussion;
         $discussion->forum_id = $id;
